@@ -1,0 +1,41 @@
+.PatDash-header-container {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.PatDash-header-btn {
+    padding: 0.8em;
+    padding-left: 2em;
+    padding-right: 2em;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-transform: uppercase;
+    border: 1px solid #6443b1 ;
+    background-color: #6443b1 ;
+}
+.PatDash-header-btn:hover {
+    color: #6443b1 ;
+    border: 1px solid #6443b1 ;
+    background-color: #F0F2F5 ;
+}
+.PatDash-header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.PatDash-header-icon {
+    width: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.PatDash-header-avatar {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+}

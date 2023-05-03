@@ -1,0 +1,11 @@
+.cardArticle {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+}
+
+.cardArticle:hover{
+    background-color: rgba(50, 50, 50, 0.3);
+    cursor: pointer;
+}

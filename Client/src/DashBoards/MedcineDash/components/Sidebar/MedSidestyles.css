@@ -1,0 +1,86 @@
+.Medcine-Sidebar {
+  top: 0;
+  left: 0;
+  width: 15vw;
+  min-width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  background-image: linear-gradient(#015c92, #2d83b5, #89ccf6) ;
+}
+.Medcine-Sidebar-logo-container {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: "flex";
+  align-items: center;
+  margin-inline: auto;
+  margin-top: 20px;
+}
+.Medcine-Sidebar-logo-container img {
+  width: 100%;
+  height: 100%;
+}
+.Medcine-Sidebar-container {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Medcine-Sidebar-items {
+  height: 100%;
+  width: 100%;
+}
+.Medcine-Sidebar-item {
+  padding: 1em;
+  padding-left: 2em;
+  display: flex;
+  color: #ffffff;
+  list-style: none;
+  text-decoration: none;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.Medcine-Sidebar-item:hover {
+  background-color: #004b77 ;
+}
+.Medcine-Sidebar-item-active {
+  border-radius: 20px;
+
+  padding: 1em;
+  padding-left: 2em;
+  display: flex;
+  color: #ffffff;
+  list-style: none;
+  text-decoration: none;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #004b77 ;
+  cursor: pointer;
+}
+.Medcine-Sidebar-item-icon {
+  width: 20px;
+}
+.Medcine-Sidebar-item-label {
+  font-size: small;
+  font-weight: 600;
+  margin-left: 15px;
+}
+/* Footer */
+.Medcine-Sidebar-footer {
+  padding: 1.5em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  cursor: pointer;
+}
+.Medcine-Sidebar-footer:hover {
+  background-color: #2d83b5 ;
+}

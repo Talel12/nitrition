@@ -1,0 +1,61 @@
+.footer {
+    background-color: #eefcff;
+    padding: 0 2rem 0;
+    font-size: 1rem;
+    line-height: 20px;
+    color: #737373;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 500;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 1rem;
+    width: 50%;
+}
+
+
+.social_icons a:active,
+.social_icons a:focus,
+.social_icons a:hover {
+    color: #fff;
+}
+
+.social_icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social_icons a img {
+    width: 30px;
+
+}
+
+/* SOCIAL STUFF */
+
+a {
+    margin: 1rem;
+    transition: transform 250ms;
+    color: rgb(32, 17, 17);
+}
+
+a:hover {
+    transform: translateY(-2px);
+}

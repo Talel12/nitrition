@@ -1,0 +1,78 @@
+.sidebar {
+  min-width: 465px;
+  background: transparent;
+  background-color: var(--bg-signup);
+  backdrop-filter: blur(14px);
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar h4 {
+  color: #808080;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 2rem;
+}
+
+.sidebar h4 span {
+  color: #42f0a7;
+  cursor: pointer;
+}
+
+.logoContainer img {
+  height: 15rem;
+  border-radius: 20px;
+}
+
+.logoContainer h3 {
+  color: #42f0a7;
+  text-align: center;
+  font-size: 22px;
+}
+
+.logoContainer span {
+  color: #70edb9;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #666666;
+}
+
+.formContainer button {
+  border-radius: 8px;
+  padding: 0.8rem 1.3rem;
+  background: "#42f0a7";
+  color: #fff;
+  border: none;
+  margin-top: 0.7rem;
+  font-weight: 600;
+  box-shadow: 0px 14px 31px -23px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  background: #70edc9;
+}
+
+.formContainer button:hover {
+  transform: translateY(-3px);
+  background: #70edb9;
+}
+
+.Terms {
+  text-align: center;
+  font-size: 11px;
+  line-height: 17.58px;
+  color: #808080;
+  font-weight: 300;
+}

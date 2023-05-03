@@ -1,0 +1,43 @@
+.MedcineDash-header-container {
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.MedcineDash-header-btn {
+    padding: 0.8em;
+    padding-left: 2em;
+    padding-right: 2em;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-transform: uppercase;
+    border: 1px solid #015C92 ;
+    background-color: #015C92 ;
+}
+.MedcineDash-header-btn:hover {
+    color: #015C92 ;
+    border: 1px solid #015C92 ;
+    background-color: #F0F2F5 ;
+}
+.MedcineDash-header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+}
+.MedcineDash-header-icon {
+    width: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.MedcineDash-header-avatar {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 20px;
+}

@@ -1,0 +1,14 @@
+.galleryContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.gallery {
+    border-radius: 55px;
+    overflow: hidden;
+    width: 80%;
+    height: auto;
+}

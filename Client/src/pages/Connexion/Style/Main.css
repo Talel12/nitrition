@@ -1,0 +1,19 @@
+.Main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    .Main h1{
+       font-size: 45px;
+       font-weight: 900;
+       letter-spacing: 3px;
+       color: #666666;
+ 
+     
+    }
+
+/* @media (max-width: 900px){
+    display: none;
+ } */
