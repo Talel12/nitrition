@@ -88,5 +88,5 @@ input:hover {
   background-size: contain;
   background-position: right;
   display: flex;
-  padding: 80px;
+  padding: 80px 50px;
 }
