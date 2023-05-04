@@ -16,6 +16,7 @@ app.use("/user", require("./routes/user"));
 app.use("/dossier", require("./routes/patientDossier"));
 app.use("/rendezvous", require("./routes/rendezvous"));
 app.use("/consultation", require("./routes/consultation"));
+app.use("/article", require("./routes/article"));
 
 const PORT = process.env.PORT;
 app.listen(PORT, (err) =>

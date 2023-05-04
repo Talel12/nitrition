@@ -46,6 +46,7 @@ import P404 from "./pages/404";
 import { fetchAppointments } from "./redux/rendezvousSlice/rendezvousSlice";
 import { fetchConsultations } from "./redux/consultationSlice/consultationSlice";
 import { fetchPatientDossiers } from "./redux/dossierSlice/dossierSlice";
+import { fetchArticle } from "./redux/articleSlice/articleSlice";
 
 function App() {
   const [ping, setPing] = useState(false);
@@ -57,6 +58,7 @@ function App() {
     dispatch(fetchAppointments());
     dispatch(fetchConsultations());
     dispatch(fetchPatientDossiers());
+    dispatch(fetchArticle());
   }, [ping, dispatch]);
 
   useEffect(() => {

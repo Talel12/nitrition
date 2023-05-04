@@ -1,5 +1,6 @@
 import React from "react";
 import SarraImage from "../../../../assets/img/Sarra.jpeg";
+import CoachFooter from "../../../../components/CoachFooter";
 
 const PatientCoach = () => {
   return (
@@ -76,6 +77,7 @@ const PatientCoach = () => {
               dans leur projet de remise en forme et de tonification avec un
               accompagnement personnalisé à 100 %.
             </p>
+            <CoachFooter />
           </div>
           <div
             style={{
