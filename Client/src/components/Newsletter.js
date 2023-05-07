@@ -4,12 +4,21 @@ import "../styles/Newsletter.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
+import emailjs from 'emailjs-com';
+
+
 const MySwal = withReactContent(Swal);
 
 
 
 const Newsletter = () => {
 
+  const user = 'userID';
+const service = 'service';
+const template = 'template';
+const emailjs_key = 'emailapi';
+
+emailjs.init(emailjs_key);
   const alertContent = () => {
     MySwal.fire({
       title: "Félicitations!",
@@ -31,19 +40,31 @@ const Newsletter = () => {
     setContact((prevState) => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // const { email } = contact;
-
-
-    try {
-       alertContent();
-      setContact(INITIAL_STATE);
-    } catch (e) {
-      console.log(e);
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const { email } = contact;
+  const msgClient = {
+    to_name: email,
+    from_name: 'Manager',
+    message: `Vous êtes maintenant inscrit au newsletters`,
+    to_email: email 
   };
-  // addDoc(ref, contact);
+  const msgManager = {
+    to_name: 'Manager Name',
+    from_name: email,
+    message: `${email} a inscrit au newsletters`,
+    to_email: 'Manager Email' 
+  };
+  try {
+    await emailjs.send(service, template, msgClient, user);
+    await emailjs.send(service, template, msgManager, user);
+
+    alertContent();
+    setContact(INITIAL_STATE);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
   return (
     <>
