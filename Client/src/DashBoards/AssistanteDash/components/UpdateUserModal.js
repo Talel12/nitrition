@@ -67,8 +67,8 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
             type="email"
             autocomplete=""
             value={email}
-            // onChange={(e) => setEmail(e.target.value)}
-            disabled
+            onChange={(e) => setEmail(e.target.value)}
+            readOnly
           />
         </div>
         <div>

@@ -18,7 +18,7 @@ function MedSideBar({ menu }) {
         setActive(element.id);
       }
     });
-  }, [location.pathname]);
+  }, [location.pathname,menu]);
 
   const __navigate = (id) => {
     setActive(id);

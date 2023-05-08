@@ -28,6 +28,7 @@ function PatientDashHeader({ btnText, onClick }) {
         <img
           className="PatDash-header-avatar"
           src="https://reqres.in/img/faces/9-image.jpg"
+          alt=""
         />
       </div>
     </div>

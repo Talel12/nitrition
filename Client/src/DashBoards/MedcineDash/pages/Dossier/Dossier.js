@@ -5,9 +5,7 @@ import { useSelector } from "react-redux";
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 
 import "../MedPagesStyles.css";
-import DoneIcon from "../../assets/icons/done.svg";
-import CancelIcon from "../../assets/icons/cancel.svg";
-import RefundedIcon from "../../assets/icons/refunded.svg";
+
 import DossierIcon from "../../../../assets/img/folder-icon.svg";
 
 function Dossier() {
@@ -24,7 +22,7 @@ function Dossier() {
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
     setPatient(sliceData(patientsList, page, 5));
-  }, []);
+  }, [patientsList,page]);
 
   // Search
   const __handleSearch = (event) => {
@@ -104,7 +102,7 @@ function Dossier() {
                         className="upd-grad"
                         style={{ padding: "10px 20px" }}
                       >
-                        <img src={DossierIcon} width={30} />
+                        <img src={DossierIcon} width={30}  alt=""/>
                       </button>
                     </span>
                   </td>

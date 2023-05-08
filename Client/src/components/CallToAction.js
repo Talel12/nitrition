@@ -11,9 +11,9 @@ const CallToAction = () => {
                     <h2>
                        Voulez-vouz Prendre Un Rendez Vous ? 
                     </h2>
-                    <Link to="/contact">
+                    <Link to="/signin">
                         <button className="btn-contact">
-                           Nous Contactez <i className="fas fa-chevron-right"></i>
+                           Connectez-vous <i className="fas fa-chevron-right"></i>
                         </button>
                     </Link>
 

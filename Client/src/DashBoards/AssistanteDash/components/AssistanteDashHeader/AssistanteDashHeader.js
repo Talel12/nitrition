@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+// eslint-disable-next-line
 import "./AssHeaderStyles.css";
 import NotificationIcon from "../../assets/icons/notification.svg";
 import SettingsIcon from "../../assets/icons/settings.svg";
@@ -47,6 +47,7 @@ function AssistanteDashHeader({ btnText, eventTitle }) {
             <img
               className="AssistanteDash-header-avatar"
               src="https://reqres.in/img/faces/9-image.jpg"
+              alt=""
             />
           </div>
         </>

@@ -7,9 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllUsers } from "../../../../redux/userSlice/userSlice";
 
 import "../AssPagesStyles.css";
-import DoneIcon from "../../assets/icons/done.svg";
-import CancelIcon from "../../assets/icons/cancel.svg";
-import RefundedIcon from "../../assets/icons/refunded.svg";
+
 
 function Dossier() {
   const [search, setSearch] = useState("");
@@ -32,7 +30,7 @@ function Dossier() {
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
     setPatient(sliceData(patientsList, page, 5));
-  }, []);
+  }, [patientsList,page]);
 
   // Search
   const __handleSearch = (event) => {
