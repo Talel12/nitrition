@@ -13,10 +13,12 @@ const MySwal = withReactContent(Swal);
 
 const Newsletter = () => {
 
-  const user = 'userID';
-const service = 'service';
-const template = 'template';
-const emailjs_key = 'emailapi';
+  const user = 'EcTpr2UOWczitXrtf';
+const service = 'service_y4zc7on';
+const clientTemplate = 'template_hj8kqcf';
+
+const doctorTemplate = 'template_tpwkvag';
+const emailjs_key = 'YtyQVeQN005oG9q18IbsM';
 
 emailjs.init(emailjs_key);
   const alertContent = () => {
@@ -43,21 +45,24 @@ emailjs.init(emailjs_key);
 const handleSubmit = async (e) => {
   e.preventDefault();
   const { email } = contact;
+  const ManagerName = "Zaineb Kraiem"
+  const ManagerEmail = "Sheryfaxxnabli@gmail.com"
+
   const msgClient = {
     to_name: email,
-    from_name: 'Manager',
+    from_name: ManagerName,
     message: `Vous êtes maintenant inscrit au newsletters`,
     to_email: email 
   };
   const msgManager = {
-    to_name: 'Manager Name',
+    to_name: ManagerName,
     from_name: email,
     message: `${email} a inscrit au newsletters`,
-    to_email: 'Manager Email' 
+    to_email: ManagerEmail 
   };
   try {
-    await emailjs.send(service, template, msgClient, user);
-    await emailjs.send(service, template, msgManager, user);
+    await emailjs.send(service, clientTemplate, msgClient, user);
+    await emailjs.send(service, doctorTemplate, msgManager, user);
 
     alertContent();
     setContact(INITIAL_STATE);
