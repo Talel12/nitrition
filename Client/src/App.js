@@ -47,6 +47,9 @@ import { fetchAppointments } from "./redux/rendezvousSlice/rendezvousSlice";
 import { fetchConsultations } from "./redux/consultationSlice/consultationSlice";
 import { fetchPatientDossiers } from "./redux/dossierSlice/dossierSlice";
 import { fetchArticle } from "./redux/articleSlice/articleSlice";
+import Conversation from "./components/conversation/Conversation";
+import Chat from "./pages/chat/Chat";
+import PatientArticleDetails from "./DashBoards/PatientDash/pages/Articles/PatientArticleDetails";
 
 function App() {
   const [ping, setPing] = useState(false);
@@ -94,6 +97,7 @@ function App() {
               path="/medcinedash/dossier"
               element={<MedcineDossier />}
             />
+            <Route exact path="/medcinedash/chat" element={<Chat />} />
             <Route
               exact
               path="/medcinedash/patients"
@@ -130,10 +134,16 @@ function App() {
               path="/assistantedash/"
               element={<AssistantePatients />}
             />
+
             <Route
               exact
-              path="/assistantedash/dossier"
-              element={<AssistanteDossier />}
+              path="/assistantedash/blog"
+              element={<PatientArticles />}
+            />
+            <Route
+              exact
+              path="/assistantedash/blog/:blogId"
+              element={<PatientArticleDetails />}
             />
             <Route
               exact
@@ -178,6 +188,11 @@ function App() {
               exact
               path="/patientdash/articles"
               element={<PatientArticles />}
+            />
+            <Route
+              exact
+              path="/patientdash/articles/:id"
+              element={<PatientArticleDetails />}
             />
           </Route>
         </Route>

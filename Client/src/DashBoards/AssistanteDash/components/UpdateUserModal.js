@@ -4,15 +4,14 @@ import { useLocation } from "react-router-dom";
 import { edituser } from "../../../redux/userSlice/userSlice";
 
 function UpdateUserModal({ user, setShowUpdateModal }) {
-  const location=useLocation()
-  const path=location.pathname
+  const location = useLocation();
+  const path = location.pathname;
   const [name, setName] = useState(user.name);
   const [lastName, setLastName] = useState(user.LastName);
   const [email, setEmail] = useState(user.email);
   const [password, setPassword] = useState(user.password);
   const [CIN, setCIN] = useState(user.CIN);
-  console.log('heeey',user._id)
-
+  console.log("heeey", user._id);
 
   const dispatch = useDispatch();
   const refresh = () => {
@@ -26,10 +25,10 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
       LastName: lastName,
       email: email,
       password: password,
-      CIN:CIN
+      CIN: CIN,
     };
-    console.log(updatedUser)
-    console.log(user._id)
+    console.log(updatedUser);
+    console.log(user._id);
     dispatch(edituser({ id: user._id, newuser: updatedUser }));
     setShowUpdateModal(false);
     refresh();
@@ -42,9 +41,9 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
   return (
     <div className="modal">
       <form onSubmit={handleSubmit}>
-        <h2>Update User</h2>
+        <h2>Modifier :</h2>
         <div>
-          <h2>Name:</h2>
+          <h2>Prénom:</h2>
           <input
             type="text"
             autocomplete=""
@@ -53,7 +52,7 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
           />
         </div>
         <div>
-          <h2>Last Name:</h2>
+          <h2>Nom:</h2>
           <input
             type="text"
             autocomplete=""
@@ -80,19 +79,21 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
             onChange={(e) => setCIN(e.target.value)}
           />
         </div>
-        {path.includes("profil") ? <div>
-          <h2>Password:</h2>
-          <input
-            type="password"
-            autocomplete="current-password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div> : null}
-        
-        <button type="submit">Update</button>
+        {path.includes("profil") ? (
+          <div>
+            <h2>Mot de passe:</h2>
+            <input
+              type="password"
+              autocomplete="current-password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+        ) : null}
+
+        <button type="submit">Modifier</button>
         <button type="button" onClick={handleCloseButtonClick}>
-          Close
+          Annuler
         </button>
       </form>
     </div>

@@ -58,9 +58,9 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
   return (
     <div className="modal">
       <form onSubmit={handleSubmit}>
-        <h2>Update Appointment</h2>
+        <h2>Modifier Rendez-vous</h2>
         <div>
-          <h2>Start At:</h2>
+          <h2>Debut de consultation:</h2>
           <input
             value={startAt.substr(0, 19)}
             type="datetime-local"
@@ -72,7 +72,7 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
           />
         </div>
         <div>
-          <h2>End At:</h2>
+          <h2>Fin de consultation:</h2>
           <input
             value={endAt.substr(0, 19)}
             type="datetime-local"
@@ -120,9 +120,9 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
           />
         </div>
 
-        <button type="submit">Update</button>
+        <button type="submit">Modifier</button>
         <button type="button" onClick={handleCloseButtonClick}>
-          Close
+          Annuler
         </button>
       </form>
     </div>

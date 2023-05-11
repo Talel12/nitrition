@@ -4,9 +4,11 @@ import "./MedHeaderstyles.css";
 import NotificationIcon from "../../assets/icons/notification.svg";
 import SettingsIcon from "../../assets/icons/settings.svg";
 import AddUserModal from "../AddUserModal";
+import { useSelector } from "react-redux";
 
 function MedcineDashHeader({ btnText }) {
   const [showAddModal, setShowAddModal] = useState(false);
+  const user = useSelector((store) => store?.user?.user);
 
   // Handle the click event on the "Modifier" button
   const handleAddButtonClick = () => {
@@ -29,7 +31,7 @@ function MedcineDashHeader({ btnText }) {
           )}
           <div className="MedcineDash-header-right">
             <h3>Nutritionniste </h3>
-            <img
+            {/* <img
               src={NotificationIcon}
               alt="notification-icon"
               className="MedcineDash-header-icon"
@@ -38,10 +40,13 @@ function MedcineDashHeader({ btnText }) {
               src={SettingsIcon}
               alt="settings-icon"
               className="MedcineDash-header-icon"
-            />
+            /> */}
+
             <img
               className="MedcineDash-header-avatar"
-              src="https://reqres.in/img/faces/9-image.jpg"
+              style={{ marginLeft: 20 }}
+              src={user?.img}
+              // src="https://reqres.in/img/faces/9-image.jpg"
             />
           </div>
         </>

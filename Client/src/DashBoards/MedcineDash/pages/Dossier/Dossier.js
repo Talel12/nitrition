@@ -9,6 +9,7 @@ import DoneIcon from "../../assets/icons/done.svg";
 import CancelIcon from "../../assets/icons/cancel.svg";
 import RefundedIcon from "../../assets/icons/refunded.svg";
 import DossierIcon from "../../../../assets/img/folder-icon.svg";
+import DossierCard from "./DossierCard";
 
 function Dossier() {
   const [search, setSearch] = useState("");
@@ -71,51 +72,13 @@ function Dossier() {
             <th>PATIENT</th>
             <th>CIN</th>
             <th>DOSSIER</th>
-            <th>SUPPRIMER</th>
+            {/* <th>SUPPRIMER</th> */}
           </thead>
 
           {patient.length !== 0 ? (
             <tbody>
               {patient.map((user, index) => (
-                <tr key={index}>
-                  <td>
-                    <span>{index}</span>
-                  </td>
-
-                  <td>
-                    <div>
-                      <img
-                        src={user.img}
-                        className="AssistanteDash-content-avatar"
-                        alt={user.name + " " + user.LastName}
-                      />
-                      <span>
-                        {user.name} {user.LastName}
-                      </span>
-                    </div>
-                  </td>
-                  <td>
-                    <span>{user?.CIN}</span>
-                  </td>
-                  <td>
-                    <span>
-                      {" "}
-                      <button
-                        className="upd-grad"
-                        style={{ padding: "10px 20px" }}
-                      >
-                        <img src={DossierIcon} width={30} />
-                      </button>
-                    </span>
-                  </td>
-                  <td>
-                    <span>
-                      <button className="supp-grad" style={{ padding: 10 }}>
-                        Supprimer
-                      </button>
-                    </span>
-                  </td>
-                </tr>
+                <DossierCard user={user} index={index} />
               ))}
             </tbody>
           ) : null}

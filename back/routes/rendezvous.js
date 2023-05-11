@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
 // READ all appointments
 router.get("/", async (req, res) => {
   try {
-    const appointments = await Appointment.find();
+    const appointments = await Appointment.find().populate("patient");
     res.json(appointments);
   } catch (err) {
     res.status(500).json({ message: err.message });

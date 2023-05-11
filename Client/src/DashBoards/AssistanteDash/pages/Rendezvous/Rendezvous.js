@@ -17,7 +17,7 @@ function Rendezvous() {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
 
-  const events = useSelector((store) => store.rendezvous.appointments);
+  const events = useSelector((store) => store?.rendezvous?.appointments);
   const [currentAppointment, setCurrentAppointment] = useState(
     events[0] || null
   );
@@ -98,7 +98,7 @@ function Rendezvous() {
   ) : (
     <div className="AssistanteDash-content">
       <AssistanteDashHeader
-        btnText="New Appointment"
+        btnText="Ajouter un rendez-vous"
         eventTitle={"appointment"}
       />
       <div style={{ height: "100vh" }}>
@@ -118,7 +118,7 @@ function Rendezvous() {
           timeFormat={"24"}
           weekDayStart={"Monday"}
           calendarIDsHidden={["work"]}
-          language={"en"}
+          language={"fr"}
         />
       </div>
 

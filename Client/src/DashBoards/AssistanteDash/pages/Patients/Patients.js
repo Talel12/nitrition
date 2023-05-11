@@ -70,16 +70,16 @@ function Patients() {
         />
       ) : (
         <>
-          <AssistanteDashHeader btnText="add patient" />
+          <AssistanteDashHeader btnText="Ajouter un Patient" />
 
           <div className="AssistanteDash-content-container">
             <div className="AssistanteDash-content-header">
-              <h2>Patients List</h2>
+              <h2>Patients</h2>
               <div className="AssistanteDash-content-search">
                 <input
                   type="text"
                   value={search}
-                  placeholder="Search.."
+                  placeholder="Rechercher.."
                   className="AssistanteDash-content-input"
                   onChange={(e) => handleSearch(e)}
                 />
@@ -89,10 +89,10 @@ function Patients() {
             <table>
               <thead>
                 <th>ID</th>
-                <th>COSTUMER</th>
+                <th>PATIENT</th>
                 <th>EMAIL</th>
-                <th>UPDATE</th>
-                <th>DELETE</th>
+                <th>MODIFIER</th>
+                <th>SUPPRIMER</th>
               </thead>
 
               {patient.length !== 0 ? (
@@ -165,7 +165,7 @@ function Patients() {
               </div>
             ) : (
               <div className="AssistanteDash-content-footer">
-                <span className="empty-table">No data</span>
+                <span className="empty-table">Tableau vide</span>
               </div>
             )}
           </div>

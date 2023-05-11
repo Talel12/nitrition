@@ -1,0 +1,8 @@
+.modal-container {
+  width: calc(100vw - 250px);
+  height: 100vh;
+  background-color: aquamarine;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
