@@ -11,12 +11,12 @@ const sidebar_menu = [
     path: "/AssistanteDash/patients",
     title: "Patients",
   },
-  // {
-  //   id: 2,
-  //   icon: DocumentsIcon,
-  //   path: "/AssistanteDash/dossier",
-  //   title: "Dossier",
-  // },
+  {
+    id: 2,
+    icon: DocumentsIcon,
+    path: "/AssistanteDash/blog",
+    title: "Blog",
+  },
   {
     id: 3,
     icon: CalendarIcon,

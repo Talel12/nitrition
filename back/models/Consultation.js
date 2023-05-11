@@ -10,10 +10,6 @@ const consultationSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
-  duration: {
-    type: Number,
-    required: true,
-  },
   reason: {
     type: String,
     required: true,
@@ -21,23 +17,25 @@ const consultationSchema = new mongoose.Schema({
   notes: {
     type: String,
   },
-  prescription: {
-    compliment: {
-      type: String,
+  prescription: [
+    {
+      compliment: {
+        type: String,
+      },
+      dosage: {
+        type: String,
+      },
+      instructions: {
+        type: String,
+      },
+      startDate: {
+        type: Date,
+      },
+      endDate: {
+        type: Date,
+      },
     },
-    dosage: {
-      type: String,
-    },
-    instructions: {
-      type: String,
-    },
-    startDate: {
-      type: Date,
-    },
-    endDate: {
-      type: Date,
-    },
-  },
+  ],
 });
 
 module.exports = mongoose.model("Consultation", consultationSchema);

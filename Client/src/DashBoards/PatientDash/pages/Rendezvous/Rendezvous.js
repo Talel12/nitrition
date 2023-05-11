@@ -17,9 +17,10 @@ function Rendezvous() {
   // const current = useSelector((state) => state.user.user);
 
   // Get the updated userList state from the Redux store
-  // const rendezVousList = useSelector((state) => state.rendezvous.appointment);
+  const rendezVousList = useSelector((state) => state?.rendezvous?.appointment);
+
   // Filter the userList to get only the users who have a role of "patient"
-  const meRendezVous = useSelector((state) => state.user.user.rendezvous);
+  const meRendezVous = useSelector((state) => state?.user?.user?.rendezvous);
 
   useEffect(() => {
     setPagination(calculateRange(meRendezVous || [], 5));

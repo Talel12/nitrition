@@ -135,12 +135,14 @@ function Rendezvous() {
                   <td>
                     <div>
                       <img
-                        src={order.patient}
+                        src={order?.patient?.img}
                         className="AssistanteDash-content-avatar"
-                        alt={order.first_name + " " + order.last_name}
+                        alt={
+                          order?.patient?.name + " " + order?.patient?.LastName
+                        }
                       />
                       <span>
-                        {order.first_name} {order.last_name}
+                        {order?.patient?.name} {order?.patient?.LastName}
                       </span>
                     </div>
                   </td>

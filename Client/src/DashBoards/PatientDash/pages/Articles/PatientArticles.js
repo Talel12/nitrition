@@ -1,8 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link, useLocation } from "react-router-dom";
 import ArticleCard from "../../components/Articles/ArticleCard";
 
 const PatientArticles = () => {
+  const location = useLocation();
+  const path = location.pathname;
   const articles = useSelector((store) => store.articles.Articles);
   return (
     <div>
@@ -20,7 +23,17 @@ const PatientArticles = () => {
         >
           {articles.map((article, i) => (
             <>
-              <ArticleCard article={article} />
+              <Link
+                style={{ width: "40%", cursor: "pointer" }}
+                to={
+                  path.toLowerCase().includes("assistant")
+                    ? `/assistantedash/blog/${article._id}`
+                    : `/patientdash/articles/${article._id}`
+                }
+                state={article}
+              >
+                <ArticleCard article={article} />
+              </Link>
             </>
           ))}
         </div>

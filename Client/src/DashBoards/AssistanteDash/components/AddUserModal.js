@@ -22,8 +22,8 @@ function AddUserModal({ setShowAddModal }) {
       email: email,
       password: password,
     };
-    console.log(newuser)
-    dispatch(userRegister( newuser ));
+    console.log(newuser);
+    dispatch(userRegister(newuser));
     setShowAddModal(false);
     refresh();
   };
@@ -35,22 +35,22 @@ function AddUserModal({ setShowAddModal }) {
   return (
     <div className="modal">
       <form onSubmit={handleSubmit}>
-        <h2>Add User</h2>
+        <h2>Creer un Patient</h2>
         <div>
-          <h3>Name:</h3>
+          <h3>Prénom:</h3>
           <input
             type="text"
             autocomplete=""
-            placeholder="name"
+            placeholder="Prénom"
             onChange={(e) => setName(e.target.value)}
           />
         </div>
         <div>
-          <h3>Last Name:</h3>
+          <h3>Nom:</h3>
           <input
             type="text"
             autocomplete=""
-            placeholder="lastName"
+            placeholder="Nom"
             onChange={(e) => setLastName(e.target.value)}
           />
         </div>
@@ -64,17 +64,17 @@ function AddUserModal({ setShowAddModal }) {
           />
         </div>
         <div>
-          <h3>Password:</h3>
+          <h3>Mot de Passe:</h3>
           <input
             type="password"
             autocomplete="current-password"
-            placeholder="password"
+            placeholder="mot de passe"
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit">Add</button>
+        <button type="submit">Ajouter</button>
         <button type="button" onClick={handleCloseButtonClick}>
-          Close
+          Annuler
         </button>
       </form>
     </div>

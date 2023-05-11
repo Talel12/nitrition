@@ -7,6 +7,7 @@ import { calculateRange, sliceData } from "../../utils/table-pagination";
 import "../MedPagesStyles.css";
 
 import DossierIcon from "../../../../assets/img/folder-icon.svg";
+import DossierCard from "./DossierCard";
 
 function Dossier() {
   const [search, setSearch] = useState("");
@@ -69,51 +70,14 @@ function Dossier() {
             <th>PATIENT</th>
             <th>CIN</th>
             <th>DOSSIER</th>
-            <th>SUPPRIMER</th>
+            {/* <th>SUPPRIMER</th> */}
           </thead>
 
           {patient.length !== 0 ? (
             <tbody>
               {patient.map((user, index) => (
-                <tr key={index}>
-                  <td>
-                    <span>{index}</span>
-                  </td>
+                <DossierCard user={user} index={index} />
 
-                  <td>
-                    <div>
-                      <img
-                        src={user.img}
-                        className="AssistanteDash-content-avatar"
-                        alt={user.name + " " + user.LastName}
-                      />
-                      <span>
-                        {user.name} {user.LastName}
-                      </span>
-                    </div>
-                  </td>
-                  <td>
-                    <span>{user?.CIN}</span>
-                  </td>
-                  <td>
-                    <span>
-                      {" "}
-                      <button
-                        className="upd-grad"
-                        style={{ padding: "10px 20px" }}
-                      >
-                        <img src={DossierIcon} width={30}  alt=""/>
-                      </button>
-                    </span>
-                  </td>
-                  <td>
-                    <span>
-                      <button className="supp-grad" style={{ padding: 10 }}>
-                        Supprimer
-                      </button>
-                    </span>
-                  </td>
-                </tr>
               ))}
             </tbody>
           ) : null}

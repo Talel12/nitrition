@@ -4,6 +4,7 @@ import consultationSlice from "./consultationSlice/consultationSlice";
 import patientDossiersSlice from "./dossierSlice/dossierSlice";
 import rendezvous from "./rendezvousSlice/rendezvousSlice";
 import articleSlice from "./articleSlice/articleSlice";
+import chatSlice from "./chatSlice.js/chatSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     dossiers: patientDossiersSlice,
     rendezvous: rendezvous,
     articles: articleSlice,
+    chat: chatSlice,
   },
 });

@@ -41,9 +41,9 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
   return (
     <div className="modal">
       <form onSubmit={handleSubmit}>
-        <h2>Update User</h2>
+        <h2>Modifier Patient</h2>
         <div>
-          <h2>Name:</h2>
+          <h2>Prénom:</h2>
           <input
             type="text"
             autocomplete=""
@@ -52,7 +52,7 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
           />
         </div>
         <div>
-          <h2>Last Name:</h2>
+          <h2>Nom:</h2>
           <input
             type="text"
             autocomplete=""
@@ -81,7 +81,7 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
         </div>
         {path.includes("profil") ? (
           <div>
-            <h2>Password:</h2>
+            <h2>Mot de passe:</h2>
             <input
               type="password"
               autocomplete="current-password"
@@ -91,9 +91,9 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
           </div>
         ) : null}
 
-        <button type="submit">Update</button>
+        <button type="submit">Modifier</button>
         <button type="button" onClick={handleCloseButtonClick}>
-          Close
+          Annuler
         </button>
       </form>
     </div>
