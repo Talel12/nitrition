@@ -91,6 +91,7 @@ const PatientCoach = () => {
               style={{ borderRadius: 20, marginRight: 50 }}
               width={320}
               src={SarraImage}
+              alt=" "
             />
           </div>
         </div>

@@ -31,7 +31,7 @@ function Rendezvous() {
   useEffect(() => {
     setPagination(calculateRange(all_orders, 5));
     setOrders(sliceData(all_orders, page, 5));
-  }, []);
+  }, [page]);
 
   // Search
   const __handleSearch = (event) => {

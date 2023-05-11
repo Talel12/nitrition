@@ -16,7 +16,7 @@ const Switcher = () => {
         ? navigate("/assistantedash")
         : navigate("/signin");
     }, 1000);
-  }, []);
+  }, [currentUser?.role,navigate]);
   return (
     <div style={{ color: "black" }}>
       <div

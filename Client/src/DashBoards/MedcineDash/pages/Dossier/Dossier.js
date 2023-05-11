@@ -5,9 +5,7 @@ import { useSelector } from "react-redux";
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 
 import "../MedPagesStyles.css";
-import DoneIcon from "../../assets/icons/done.svg";
-import CancelIcon from "../../assets/icons/cancel.svg";
-import RefundedIcon from "../../assets/icons/refunded.svg";
+
 import DossierIcon from "../../../../assets/img/folder-icon.svg";
 import DossierCard from "./DossierCard";
 
@@ -25,7 +23,7 @@ function Dossier() {
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
     setPatient(sliceData(patientsList, page, 5));
-  }, []);
+  }, [patientsList,page]);
 
   // Search
   const __handleSearch = (event) => {
@@ -79,6 +77,7 @@ function Dossier() {
             <tbody>
               {patient.map((user, index) => (
                 <DossierCard user={user} index={index} />
+
               ))}
             </tbody>
           ) : null}

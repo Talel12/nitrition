@@ -34,6 +34,7 @@ function PatientDashHeader({ btnText, onClick }) {
           style={{ marginLeft: 20 }}
           src={user?.img}
           // src="https://reqres.in/img/faces/9-image.jpg"
+          alt=""
         />
       </div>
     </div>

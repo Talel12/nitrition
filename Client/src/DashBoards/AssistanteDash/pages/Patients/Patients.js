@@ -6,9 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteuser } from "../../../../redux/userSlice/userSlice";
 
 import "../AssPagesStyles.css";
-import DoneIcon from "../../assets/icons/done.svg";
-import CancelIcon from "../../assets/icons/cancel.svg";
-import RefundedIcon from "../../assets/icons/refunded.svg";
+
 
 function Patients() {
   const [search, setSearch] = useState("");
@@ -28,7 +26,7 @@ function Patients() {
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
     setPatient(sliceData(patientsList, page, 5));
-  }, [usersList]);
+  }, [patientsList,page]);
 
   // Search
   const handleSearch = (event) => {

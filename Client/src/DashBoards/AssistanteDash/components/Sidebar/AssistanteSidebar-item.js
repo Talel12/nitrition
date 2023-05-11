@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import "./AssSideStyles.css";
 
 const AssistanteSidebaritem = ({ item, active }) => {
-  const [hover, setHover] = useState(false);
   return (
     <Link
       to={item.path}

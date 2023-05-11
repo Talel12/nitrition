@@ -5,8 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { edituser } from "../../../../redux/userSlice/userSlice";
 import { refresh } from "../../../../App";
 
+
 const Profile = () => {
   const user = useSelector((store) => store?.user?.user);
+
 
   const [newUser, setNewUser] = useState(user);
 
@@ -44,10 +46,12 @@ const Profile = () => {
       <div className="profile-show">
         {/* <h2>Profile</h2> */}
         {/* <DataGridDemo /> */}
+
         <img src={user?.img} />
         <h3>{user?.name || "Prenom"}</h3>
         <h3>{user?.LastName || "Nom"}</h3>
         <h3>{user?.CIN}</h3>
+
         <h4>{user?.email}</h4>
       </div>
     </div>

@@ -1,7 +1,5 @@
-import PatientsIcon from "../assets/icons/patients.svg";
-import DocumentsIcon from "../assets/icons/documents.svg";
+
 import CalendarIcon from "../assets/icons/calendar.svg";
-import UsersIcon from "../assets/icons/users.svg";
 
 import UserIcon from "../assets/icons/user.svg";
 
