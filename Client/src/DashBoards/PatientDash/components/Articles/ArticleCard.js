@@ -8,7 +8,7 @@ const ArticleCard = ({article}) => {
         <div style={{position:'absolute',bottom:0,padding:5,backgroundColor:"#33333399", width:"100%"}}>
             <h2 style={{color:"white",}}>{article.title}</h2>
         </div>
-        <img style={{margin:0}} width={'100%'} height="100%" src={article.img}/>
+        <img style={{margin:0}} width={'100%'} height="100%" src={article.img} alt=''/>
     </div>
   )
 }

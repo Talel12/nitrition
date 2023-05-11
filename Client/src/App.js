@@ -3,7 +3,8 @@ import "./styles/App.css";
 import aos from "aos";
 import "aos/dist/aos.css";
 import "kalend/dist/styles/index.css";
-import "react-datalist-input/dist/styles.css";
+// eslint-disable-next-line
+// import "react-datalist-input/dist/styles.css";
 
 import { Route, Routes } from "react-router-dom/dist";
 import Home from "./pages/Home";

@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "./profile.css"
-import DataGridDemo from "../../components/DataGrid/DataGrid";
-import { useDispatch, useSelector } from "react-redux"
+import {  useSelector } from "react-redux"
 
 const Profile = () => {
   const [newUser, setNewUser] = useState({});
   const user = useSelector(store => store?.user?.user)
 
-  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,7 +27,7 @@ const Profile = () => {
       <div className="profile-show">
         {/* <h2>Profile</h2> */}
         {/* <DataGridDemo /> */}
-        <img src={user?.img} />
+        <img src={user?.img} alt="" />
         <h3>{user?.name || "First Name"}</h3>
         <h3>{user?.LastName || "Last Name"}</h3>
         <h3>{user.CIN}</h3>

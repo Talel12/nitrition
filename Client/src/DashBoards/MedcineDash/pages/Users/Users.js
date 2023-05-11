@@ -6,9 +6,7 @@ import { calculateRange, sliceData } from "../../utils/table-pagination";
 import { useSelector } from "react-redux";
 
 import "../MedPagesStyles.css";
-import DoneIcon from "../../assets/icons/done.svg";
-import CancelIcon from "../../assets/icons/cancel.svg";
-import RefundedIcon from "../../assets/icons/refunded.svg";
+
 
 function Users() {
   const [search, setSearch] = useState("");
@@ -22,7 +20,7 @@ function Users() {
   useEffect(() => {
     setPagination(calculateRange(usersList, 5));
     setUsers(sliceData(usersList, page, 5));
-  }, []);
+  }, [page,usersList]);
 
   // Search
   const __handleSearch = (event) => {

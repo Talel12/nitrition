@@ -5,9 +5,7 @@ import { useSelector } from "react-redux";
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 
 import "../PatPagesStyles.css";
-import DoneIcon from "../../assets/icons/done.svg";
-import CancelIcon from "../../assets/icons/cancel.svg";
-import RefundedIcon from "../../assets/icons/refunded.svg";
+
 
 function Rendezvous() {
   const [search, setSearch] = useState("");
@@ -16,17 +14,17 @@ function Rendezvous() {
 
   const [rendv, setrendv] = useState([]);
 
-  const current = useSelector((state) => state.user.user);
+  // const current = useSelector((state) => state.user.user);
 
   // Get the updated userList state from the Redux store
-  const rendezVousList = useSelector((state) => state.rendezvous.appointment);
+  // const rendezVousList = useSelector((state) => state.rendezvous.appointment);
   // Filter the userList to get only the users who have a role of "patient"
   const meRendezVous = useSelector((state) => state.user.user.rendezvous);
 
   useEffect(() => {
     setPagination(calculateRange(meRendezVous || [], 5));
     setrendv(sliceData(meRendezVous || [], page, 5));
-  }, []);
+  }, [meRendezVous,page]);
 
   // Search
   const __handleSearch = (event) => {

@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { userRegister } from "../../../redux/userSlice/userSlice";
 
 import DatalistInput from "react-datalist-input";
 
 import { addMinutes } from "date-fns";
-import { id } from "date-fns/locale";
 import { addAppointment } from "../../../redux/rendezvousSlice/rendezvousSlice";
 
 function AddApointmentModal({ setShowAddModal }) {

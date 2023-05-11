@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import DatalistInput from "react-datalist-input";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
 import { updateAppointment } from "../../../redux/rendezvousSlice/rendezvousSlice";
-import { edituser } from "../../../redux/userSlice/userSlice";
 
 function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
   const patientList = useSelector((store) =>
@@ -32,9 +30,9 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
   //   console.log('heeey',currentAppointment._id)
 
   const dispatch = useDispatch();
-  const refresh = () => {
-    window.location.reload();
-  };
+  // const refresh = () => {
+  //   window.location.reload();
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedAppointment = {

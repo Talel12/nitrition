@@ -1,6 +1,6 @@
 import React from "react";
 import "../Style/Main.css";
-import signinImage from "../../../assets/img/signupImage.webp";
+// import signinImage from "../../../assets/img/signupImage.webp";
 
 const Main = () => {
   return (
