@@ -5,6 +5,7 @@ const initialState = {
   consultations: [],
   status: "idle",
   error: null,
+  patientConsultation: {},
 };
 
 export const fetchConsultations = createAsyncThunk(
@@ -15,10 +16,23 @@ export const fetchConsultations = createAsyncThunk(
   }
 );
 
+export const fetchConsultationbyID = createAsyncThunk(
+  "consultations/fetchConsultationbyID",
+  async (ids) => {
+    const response = await axios.get(
+      `http://localhost:5000/consultation/${ids}`
+    );
+    return response.data;
+  }
+);
+
 export const addConsultation = createAsyncThunk(
   "consultations/addConsultation",
   async (consultation) => {
-    const response = await axios.post("http://localhost:5000/consultation", consultation);
+    const response = await axios.post(
+      "http://localhost:5000/consultation",
+      consultation
+    );
     return response.data;
   }
 );
@@ -56,6 +70,17 @@ const consultationsSlice = createSlice({
         state.consultations = action.payload;
       })
       .addCase(fetchConsultations.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(fetchConsultationbyID.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchConsultationbyID.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.patientConsultation = action.payload;
+      })
+      .addCase(fetchConsultationbyID.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       })

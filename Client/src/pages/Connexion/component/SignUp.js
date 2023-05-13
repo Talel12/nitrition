@@ -31,17 +31,19 @@ const SignUp = () => {
       </div>
       <div className="formContainer">
         <div>
-          <h3>Sign Up</h3>
-          <form onSubmit={handleSubmit}> {/* Enclose the inputs in a form element */}
+          <h3>S'inscrire</h3>
+          <form onSubmit={handleSubmit}>
+            {" "}
+            {/* Enclose the inputs in a form element */}
             <Input
               name="name"
               handleChange={handleChange}
-              placeholder="First Name"
+              placeholder="Prénom"
             />
             <Input
               name="LastName"
               handleChange={handleChange}
-              placeholder="Last Name"
+              placeholder="Nom"
             />
             <Input
               name="email"
@@ -54,20 +56,21 @@ const SignUp = () => {
               name="password"
               type="password"
               handleChange={handleChange}
-              placeholder="Password"
+              placeholder="Mot de passe"
             />
-            <button type="submit">Sign Up</button>
+            <button type="submit">S'inscrire</button>
           </form>
         </div>
       </div>
       <div>
         <div className="Terms">
-          By signing up, I agree to the Privacy Policy <br /> and Terms of Service
+          En m'inscrivant, j'accepte la politique de confidentialité <br /> et
+          les conditions d'utilisation
         </div>
         <h4>
-          Already have an account?
+          Vous avez déjà un compte?
           <Link to="/signin">
-            <span> Sign In</span>
+            <span>Se connecter</span>
           </Link>
         </h4>
       </div>

@@ -31,7 +31,7 @@ const SignIn = () => {
       </div>
       <div className="formContainer">
         <div>
-          <h3>Sign In</h3>
+          <h3>Se connecter</h3>
           <form onSubmit={handleSubmit}>
             <Input
               handleChange={handleChange}
@@ -43,17 +43,17 @@ const SignIn = () => {
               handleChange={handleChange}
               name="password"
               type="password"
-              placeholder="Password"
+              placeholder="Mot de passe"
             />
-            <button type="submit">Sign In</button>
+            <button type="submit">Se connecter</button>
           </form>
         </div>
       </div>
       <div>
         <h4>
-          You Dont have an account?
+          Vous n'avez pas de compte ?
           <Link to="/signup">
-            <span> Sign Up</span>
+            <span> S'inscrire</span>
           </Link>
         </h4>
       </div>

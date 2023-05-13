@@ -6,6 +6,19 @@ const consultationSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  patientDossier: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "PatientDossier",
+    required: true,
+  },
+  poid: {
+    type: String,
+    required: true,
+  },
+  taille: {
+    type: String,
+    required: true,
+  },
   date: {
     type: Date,
     required: true,

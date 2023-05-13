@@ -55,8 +55,8 @@ export const edituser = createAsyncThunk(
   "user/edit",
   async ({ id, newuser }) => {
     try {
-        console.log(id)
-        console.log(newuser)
+      console.log(id);
+      console.log(newuser);
       let result = axios.put(`http://localhost:5000/user/${id}`, newuser);
       return result.data;
     } catch (error) {

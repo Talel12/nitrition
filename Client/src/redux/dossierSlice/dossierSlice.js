@@ -16,10 +16,23 @@ export const fetchPatientDossiers = createAsyncThunk(
   }
 );
 
+export const fetchPatientDossiersByID = createAsyncThunk(
+  "patientDossiers/fetchPatientDossiersByID",
+  async (patientDossier) => {
+    const response = await axios.get(
+      `http://localhost:5000/dossier/${patientDossier}`
+    );
+    return response.data;
+  }
+);
+
 export const addNewPatientDossier = createAsyncThunk(
   "patientDossiers/addNewPatientDossier",
   async (patientDossier) => {
-    const response = await axios.post("http://localhost:5000/dossier", patientDossier);
+    const response = await axios.post(
+      "http://localhost:5000/dossier",
+      patientDossier
+    );
     return response.data;
   }
 );
@@ -60,6 +73,17 @@ const patientDossiersSlice = createSlice({
       state.patientDossiers = state.patientDossiers.concat(action.payload);
     },
     [fetchPatientDossiers.rejected]: (state, action) => {
+      state.status = "failed";
+      state.error = action.error.message;
+    },
+    [fetchPatientDossiersByID.pending]: (state, action) => {
+      state.status = "loading";
+    },
+    [fetchPatientDossiersByID.fulfilled]: (state, action) => {
+      state.status = "succeeded";
+      state.currentPatientDossier = action.payload;
+    },
+    [fetchPatientDossiersByID.rejected]: (state, action) => {
       state.status = "failed";
       state.error = action.error.message;
     },

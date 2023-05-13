@@ -1,8 +1,119 @@
 .modal-container {
   width: calc(100vw - 250px);
   height: 100vh;
-  background-color: aquamarine;
+  background-color: white;
   position: absolute;
   top: 0;
   right: 0;
+  padding: 50px;
+}
+
+.modal-creation {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.close-modal-btn {
+  width: 50px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.dossier-pation-profil {
+  width: 20vw;
+  background-color: rgba(214, 240, 241, 0.596);
+  height: 70vh;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 50px;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.dossier-pation-profil img {
+  width: 100px;
+  height: 100px;
+  margin: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.dossier-patient-container {
+  display: flex;
+  width: 100%;
+  /* height: 1000px; */
+}
+
+.dossier-pation-consultation-container {
+  width: 60vw;
+  min-height: 300px;
+  background-color: beige;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  /* justify-content: center; */
+}
+
+.consultation-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.add-consultaion-card-btn {
+  color: #1c1c1c;
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* width: 30%; */
+  cursor: pointer;
+  padding: 10px;
+  min-height: 250px;
+  width: 100%;
+}
+
+.add-consultaion-card-btn:hover {
+  background-color: rgba(196, 227, 196, 0.689);
+}
+
+.add-consultaion-card-btn img {
+  width: 100px;
+}
+
+.consultation-card-container {
+  width: 94%;
+  min-height: 250px;
+  background-color: rgba(196, 227, 196, 0.509);
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+.consultation-modal-container {
+  width: calc(100vw - 250px);
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(234, 252, 255);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
