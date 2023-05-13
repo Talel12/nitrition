@@ -42,10 +42,10 @@ const consultationSchema = new mongoose.Schema({
         type: String,
       },
       startDate: {
-        type: Date,
+        type: String,
       },
       endDate: {
-        type: Date,
+        type: String,
       },
     },
   ],
