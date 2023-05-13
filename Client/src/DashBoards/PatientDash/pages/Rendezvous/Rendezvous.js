@@ -5,9 +5,11 @@ import { useSelector } from "react-redux";
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 
 import "../PatPagesStyles.css";
-
+import AddApointmentModal from "./AddApointmentModal";
 
 function Rendezvous() {
+  const [showAddModal, setShowAddModal] = useState(false);
+
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState([]);
@@ -25,7 +27,7 @@ function Rendezvous() {
   useEffect(() => {
     setPagination(calculateRange(meRendezVous || [], 5));
     setrendv(sliceData(meRendezVous || [], page, 5));
-  }, [meRendezVous,page]);
+  }, [meRendezVous, page]);
 
   // Search
   const __handleSearch = (event) => {
@@ -50,8 +52,19 @@ function Rendezvous() {
   };
   return (
     <div className="PatientDash-content">
+      {showAddModal && (
+        <div
+          style={{
+            width: "100vw",
+            height: "100vh",
+            display: "flex",
+            padding: 80,
+          }}
+        >
+          {/* <AddApointmentModal setShowAddModal={setShowAddModal} /> */}
+        </div>
+      )}
       <PatientDashHeader btnText="Nouveau Rendez-vous" />
-
       <div className="PatientDash-content-container">
         <div className="PatientDash-content-header">
           <h2>Mes Rendez-vous</h2>
@@ -96,7 +109,25 @@ function Rendezvous() {
                   </td>
                   <td>
                     <span>
-                      <button className="supp-grad">{rdv.status}</button>
+                      <span
+                        className=""
+                        style={{
+                          color:
+                            rdv.status === "Scheduled"
+                              ? "blue"
+                              : rdv.status === "Accepted"
+                              ? "green"
+                              : "red",
+                          fontSize: 18,
+                          fontWeight: 900,
+                        }}
+                      >
+                        {rdv.status === "Scheduled"
+                          ? "En Cours"
+                          : rdv.status === "Accepted"
+                          ? "Confirmer"
+                          : "Annuler"}
+                      </span>
                     </span>
                   </td>
                 </tr>

@@ -16,7 +16,8 @@ const HeaderContent = () => {
               Pourquoi Prendre rendez-vous avec Mon Docteur ?{" "}
             </h1>
             <p className="white">
-              Avec Mon Docteur Prenez rendez-vous en ligne avec votre Nutriniste
+              Avec Mon Docteur Prenez rendez-vous en ligne avec votre
+              Nutritionniste
             </p>
             <Link to={"/signin"}>
               <button className="btn-rdv">

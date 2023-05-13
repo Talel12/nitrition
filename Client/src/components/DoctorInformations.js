@@ -5,8 +5,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Sarra from "../assets/img/Sarra.jpeg";
 import zaineb from "../assets/img/zaineb.jpg";
 
-
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-flip";
@@ -57,16 +55,13 @@ const DoctorInformations = () => {
                 Sécurité des Aliments
               </p>
               <h4>Langues parlées</h4>
-              <p>Français, L'arabe</p>
+              <p>Français, Arabe</p>
               <h4>Pays d'exercice</h4>
               <p>Tunisie</p>
             </div>
             <div className="card-left">
               <div className="imgContainer">
-                <img
-                  src={zaineb}
-                  alt=""
-                />
+                <img src={zaineb} alt="" />
               </div>
             </div>
           </div>

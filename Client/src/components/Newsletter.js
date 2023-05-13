@@ -4,23 +4,19 @@ import "../styles/Newsletter.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-import emailjs from 'emailjs-com';
-
+import emailjs from "emailjs-com";
 
 const MySwal = withReactContent(Swal);
 
-
-
 const Newsletter = () => {
+  const user = "EcTpr2UOWczitXrtf";
+  const service = "service_y4zc7on";
+  const clientTemplate = "template_hj8kqcf";
 
-  const user = 'EcTpr2UOWczitXrtf';
-const service = 'service_y4zc7on';
-const clientTemplate = 'template_hj8kqcf';
+  const doctorTemplate = "template_tpwkvag";
+  const emailjs_key = "YtyQVeQN005oG9q18IbsM";
 
-const doctorTemplate = 'template_tpwkvag';
-const emailjs_key = 'YtyQVeQN005oG9q18IbsM';
-
-emailjs.init(emailjs_key);
+  emailjs.init(emailjs_key);
   const alertContent = () => {
     MySwal.fire({
       title: "Félicitations!",
@@ -42,34 +38,34 @@ emailjs.init(emailjs_key);
     setContact((prevState) => ({ ...prevState, [name]: value }));
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const { email } = contact;
-  const ManagerName = "Zaineb Kraiem"
-  const ManagerEmail = "Sheryfaxxnabli@gmail.com"
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { email } = contact;
+    const ManagerName = "Zaineb Kraiem";
+    const ManagerEmail = "Sheryfaxxnabli@gmail.com";
 
-  const msgClient = {
-    to_name: email,
-    from_name: ManagerName,
-    message: `Vous êtes maintenant inscrit au newsletters`,
-    to_email: email 
-  };
-  const msgManager = {
-    to_name: ManagerName,
-    from_name: email,
-    message: `${email} a inscrit au newsletters`,
-    to_email: ManagerEmail 
-  };
-  try {
-    await emailjs.send(service, clientTemplate, msgClient, user);
-    await emailjs.send(service, doctorTemplate, msgManager, user);
+    const msgClient = {
+      to_name: email,
+      from_name: ManagerName,
+      message: `Vous êtes maintenant inscrit au newsletters`,
+      to_email: email,
+    };
+    const msgManager = {
+      to_name: ManagerName,
+      from_name: email,
+      message: `${email} a inscrit au newsletters`,
+      to_email: ManagerEmail,
+    };
+    try {
+      await emailjs.send(service, clientTemplate, msgClient, user);
+      await emailjs.send(service, doctorTemplate, msgManager, user);
 
-    alertContent();
-    setContact(INITIAL_STATE);
-  } catch (e) {
-    console.log(e);
-  }
-};
+      alertContent();
+      setContact(INITIAL_STATE);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
     <>
@@ -86,7 +82,7 @@ const handleSubmit = async (e) => {
               <input
                 type="email"
                 className="form-control"
-                placeholder="Enter your email"
+                placeholder="Entrer Votre Email"
                 name="email"
                 onChange={handleChange}
                 required

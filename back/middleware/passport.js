@@ -3,19 +3,22 @@ const JwtStrategy = require("passport-jwt").Strategy;
 const ExtractJwt = require("passport-jwt").ExtractJwt;
 const passport = require("passport");
 var opts = {
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: process.env.SecretOrKey,
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secretOrKey: process.env.SecretOrKey,
 };
 passport.use(
-    new JwtStrategy(opts, async (jwt_payload, done) => {
-        try {
-            const user = await User.findOne({ _id: jwt_payload._id }).select("-password").populate("rendezvous")
-            console.log(user)
-            user ? done(null, user) : done(null, false);
-        } catch (error) {
-            console.log(error);
-        }
-    })
+  new JwtStrategy(opts, async (jwt_payload, done) => {
+    try {
+      const user = await User.findOne({ _id: jwt_payload._id })
+        .select("-password")
+        .populate("rendezvous")
+        .populate("dossier");
+      console.log(user);
+      user ? done(null, user) : done(null, false);
+    } catch (error) {
+      console.log(error);
+    }
+  })
 );
 module.exports = isAuth = () =>
-    passport.authenticate("jwt", { session: false });
+  passport.authenticate("jwt", { session: false });

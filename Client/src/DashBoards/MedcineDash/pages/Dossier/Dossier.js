@@ -23,7 +23,7 @@ function Dossier() {
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
     setPatient(sliceData(patientsList, page, 5));
-  }, [patientsList,page]);
+  }, []);
 
   // Search
   const __handleSearch = (event) => {
@@ -76,8 +76,7 @@ function Dossier() {
           {patient.length !== 0 ? (
             <tbody>
               {patient.map((user, index) => (
-                <DossierCard user={user} index={index} />
-
+                <DossierCard user={user} index={index} key={index} />
               ))}
             </tbody>
           ) : null}

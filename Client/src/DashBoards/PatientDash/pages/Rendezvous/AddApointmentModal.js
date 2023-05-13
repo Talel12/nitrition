@@ -4,10 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import DatalistInput from "react-datalist-input";
 
 import { addMinutes } from "date-fns";
-import { addAppointment } from "../../../redux/rendezvousSlice/rendezvousSlice";
+import { addAppointment } from "../../../../redux/rendezvousSlice/rendezvousSlice";
 
 function AddApointmentModal({ setShowAddModal }) {
-  const patientId = useSelector((store) => store?.user?.user?._id);
   const patientList = useSelector((store) =>
     store?.user?.userList
       ?.filter((user) => user.role === "patient")
@@ -17,6 +16,7 @@ function AddApointmentModal({ setShowAddModal }) {
   const [endAt, setEndAt] = useState("");
 
   const [summary, setSummary] = useState("");
+  const [patient, setPatient] = useState("");
 
   const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ function AddApointmentModal({ setShowAddModal }) {
       startAt: startAT,
       endAt: endAt,
       summary: summary,
-      patient: patientId,
+      patient: patient,
     };
     console.log(newappointment);
     dispatch(addAppointment(newappointment));
@@ -61,7 +61,7 @@ function AddApointmentModal({ setShowAddModal }) {
           />
         </div>
 
-        {/* <DatalistInput
+        <DatalistInput
           style={{ color: "gray" }}
           placeholder="Patient"
           label="Selectionner Patient"
@@ -70,7 +70,7 @@ function AddApointmentModal({ setShowAddModal }) {
             setSummary(item.value);
           }}
           items={patientList}
-        /> */}
+        />
 
         {/* <div>
           <h3>Patient:</h3>
