@@ -9,12 +9,11 @@ import emailjs from "emailjs-com";
 const MySwal = withReactContent(Swal);
 
 const Newsletter = () => {
-  const user = "EcTpr2UOWczitXrtf";
-  const service = "service_y4zc7on";
-  const clientTemplate = "template_hj8kqcf";
-
-  const doctorTemplate = "template_tpwkvag";
-  const emailjs_key = "YtyQVeQN005oG9q18IbsM";
+  const user = "k7gVu6MbvICC6TiPI";
+  const service = "service_ymehotv";
+  const clientTemplate = "template_gffr5ra";
+  const doctorTemplate = "template_lbcii91";
+  const emailjs_key = "5F6URh4haQRifHYgHHBm7";
 
   emailjs.init(emailjs_key);
   const alertContent = () => {
@@ -42,7 +41,7 @@ const Newsletter = () => {
     e.preventDefault();
     const { email } = contact;
     const ManagerName = "Zaineb Kraiem";
-    const ManagerEmail = "Sheryfaxxnabli@gmail.com";
+    const ManagerEmail = "Cabinetdrkraiemzaineb@gmail.com";
 
     const msgClient = {
       to_name: email,
@@ -59,7 +58,6 @@ const Newsletter = () => {
     try {
       await emailjs.send(service, clientTemplate, msgClient, user);
       await emailjs.send(service, doctorTemplate, msgManager, user);
-
       alertContent();
       setContact(INITIAL_STATE);
     } catch (e) {
