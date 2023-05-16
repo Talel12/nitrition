@@ -9,29 +9,36 @@ import DoneIcon from "../../assets/icons/done.svg";
 import CancelIcon from "../../assets/icons/cancel.svg";
 import RefundedIcon from "../../assets/icons/refunded.svg";
 import Kalend, { CalendarView } from "kalend";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import MedcineDashHeader from "../../components/MedcineDashHeader/MedcineDashHeader";
 import UpdateApointmentModal from "../../../AssistanteDash/components/UpdateApointmentModal";
 import AddApointmentModal from "../../../AssistanteDash/components/AddApointmentModal";
+import {
+  deleteAppointment,
+  updateAppointment,
+} from "../../../../redux/rendezvousSlice/rendezvousSlice";
+import { refresh } from "../../../../App";
 
 function Rendezvous() {
   const [showEditModal, setShowEditModal] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
 
-  const events = useSelector((store) => store.rendezvous.appointments);
+  const events = useSelector((store) => store?.rendezvous?.appointments);
   const [search, setSearch] = useState("");
-  const [orders, setOrders] = useState(all_orders);
+  const [orders, setOrders] = useState([]);
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState([]);
+
+  const dispatch = useDispatch();
 
   const [currentAppointment, setCurrentAppointment] = useState(
     events[0] || null
   );
 
   useEffect(() => {
-    setPagination(calculateRange(all_orders, 5));
-    setOrders(sliceData(all_orders, page, 5));
-  }, [page]);
+    setPagination(calculateRange(events, 5));
+    setOrders(sliceData(events, page, 5));
+  }, [events, page]);
 
   // Search
   const __handleSearch = (event) => {
@@ -63,26 +70,6 @@ function Rendezvous() {
   const onNewEventClickHandler = () => {
     setShowAddModal(true);
   };
-
-  //   const events = [
-  //     {
-  //         id: 1,
-  //         startAt: '2023-04-23T18:00:00.000Z',
-  //         endAt: '2023-04-23T19:00:00.000Z',
-  //         timezoneStartAt: 'Europe/Berlin', // optional
-  //         summary: 'test',
-  //         color: 'blue',
-  //         calendarID: 'work'
-  //     },
-  //     {
-  //         id: 2,
-  //         startAt: '2023-04-23T15:00:00.000Z',
-  //         endAt: '2023-04-23T16:30:00.000Z',
-  //         timezoneStartAt: 'Europe/Berlin', // optional
-  //         summary: 'test',
-  //         color: 'blue'
-  //     }
-  // ]
 
   return showEditModal ? (
     <div style={{ width: "100vw", height: "100vh" }}>
@@ -128,9 +115,9 @@ function Rendezvous() {
             {/* <th>REVENUE</th> */}
           </thead>
 
-          {events.length !== 0 ? (
+          {orders.length !== 0 ? (
             <tbody>
-              {events.map((order, index) => (
+              {orders.map((order, index) => (
                 <tr key={index}>
                   <td>
                     <div>
@@ -177,13 +164,50 @@ function Rendezvous() {
                           className="AssistanteDash-content-icon"
                         />
                       ) : null}
-                      <span>
+                      {/* <span>
                         {order.status === "Scheduled"
                           ? "En Cours"
                           : order.status === "Cancelled"
                           ? "Refuser"
                           : "Confirmer"}
-                      </span>
+                      </span> */}
+                      <select
+                        defaultValue={order?.status}
+                        onChange={(e) => {
+                          dispatch(
+                            updateAppointment({
+                              ...events[index],
+                              status: e.target.value,
+                            })
+                          );
+                          setTimeout(() => {
+                            refresh();
+                          }, 600);
+                          // setStatus(e.target.value);
+                        }}
+                      >
+                        <option value="Scheduled">En Cours</option>
+                        <option value="Accepted">Confirmer</option>
+                        <option value="Cancelled">Annuler</option>
+                      </select>
+                      <button
+                        style={{
+                          padding: "2px 10px",
+                          marginLeft: 10,
+                          borderRadius: 5,
+                          backgroundColor: "rgba(201, 26, 26,0.8)",
+                          border: "none",
+                          color: "white",
+                        }}
+                        onClick={() => {
+                          dispatch(deleteAppointment(order._id));
+                          // setTimeout(() => {
+                          //   refresh();
+                          // }, 600);
+                        }}
+                      >
+                        Supprimer
+                      </button>
                     </div>
                   </td>
                 </tr>
@@ -194,9 +218,9 @@ function Rendezvous() {
 
         {orders.length !== 0 ? (
           <div className="AssistanteDash-content-footer">
-            {pagination.map((item, index) => (
+            {pagination.map((item, i) => (
               <span
-                key={index}
+                key={-i}
                 className={item === page ? "active-pagination" : "pagination"}
                 onClick={() => __handleChangePage(item)}
               >

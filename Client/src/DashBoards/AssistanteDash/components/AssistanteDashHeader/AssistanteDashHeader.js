@@ -19,7 +19,17 @@ function AssistanteDashHeader({ btnText, eventTitle }) {
     <div className="AssistanteDash-header-container">
       {showAddModal === true ? (
         eventTitle === "appointment" ? (
-          <AddApointmentModal setShowAddModal={setShowAddModal} />
+          <div
+            style={{
+              width: "100%",
+              height: "100vh",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <AddApointmentModal setShowAddModal={setShowAddModal} />
+          </div>
         ) : (
           <AddUserModal setShowAddModal={setShowAddModal} />
         )
@@ -49,12 +59,10 @@ function AssistanteDashHeader({ btnText, eventTitle }) {
             <img
               style={{ marginLeft: 20 }}
               className="AssistanteDash-header-avatar"
-
               src={user?.img}
               // src="https://reqres.in/img/faces/9-image.jpg"
 
               alt=""
-
             />
           </div>
         </>

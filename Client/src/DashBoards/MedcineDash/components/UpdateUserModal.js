@@ -31,7 +31,9 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
     console.log(user._id);
     dispatch(edituser({ id: user._id, newuser: updatedUser }));
     setShowUpdateModal(false);
-    refresh();
+    setTimeout(() => {
+      refresh();
+    }, 600);
   };
 
   const handleCloseButtonClick = () => {
@@ -40,44 +42,48 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
 
   return (
     <div className="modal">
+      <h2>Modifier Patient</h2>
       <form onSubmit={handleSubmit}>
-        <h2>Modifier Patient</h2>
         <div>
-          <h2>Prénom:</h2>
-          <input
-            type="text"
-            autocomplete=""
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
+          <div>
+            <h2>Prénom:</h2>
+            <input
+              type="text"
+              autocomplete=""
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div>
+            <h2>Nom:</h2>
+            <input
+              type="text"
+              autocomplete=""
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
         </div>
         <div>
-          <h2>Nom:</h2>
-          <input
-            type="text"
-            autocomplete=""
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-        </div>
-        <div>
-          <h2>Email:</h2>
-          <input
-            type="email"
-            autocomplete=""
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            readOnly
-          />
-        </div>
-        <div>
-          <h2>CIN:</h2>
-          <input
-            type="number"
-            autocomplete=""
-            value={CIN}
-            onChange={(e) => setCIN(e.target.value)}
-          />
+          <div>
+            <h2>Email:</h2>
+            <input
+              type="email"
+              autocomplete=""
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              readOnly
+            />
+          </div>
+          <div>
+            <h2>CIN:</h2>
+            <input
+              type="number"
+              autocomplete=""
+              value={CIN}
+              onChange={(e) => setCIN(e.target.value)}
+            />
+          </div>
         </div>
         {path.includes("profil") ? (
           <div>
@@ -90,11 +96,18 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
             />
           </div>
         ) : null}
-
-        <button type="submit">Modifier</button>
-        <button type="button" onClick={handleCloseButtonClick}>
-          Annuler
-        </button>
+        <div>
+          <button className="confirm-btn-primary" type="submit">
+            Modifier
+          </button>
+          <button
+            className="cancel-btn-primary"
+            type="button"
+            onClick={handleCloseButtonClick}
+          >
+            Annuler
+          </button>
+        </div>
       </form>
     </div>
   );

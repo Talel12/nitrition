@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
 import "./MedHeaderstyles.css";
-import NotificationIcon from "../../assets/icons/notification.svg";
-import SettingsIcon from "../../assets/icons/settings.svg";
+// import NotificationIcon from "../../assets/icons/notification.svg";
+// import SettingsIcon from "../../assets/icons/settings.svg";
 import AddUserModal from "../AddUserModal";
 import { useSelector } from "react-redux";
+import AddApointmentModal from "../../../AssistanteDash/components/AddApointmentModal";
 
 function MedcineDashHeader({ btnText }) {
   const [showAddModal, setShowAddModal] = useState(false);
@@ -18,7 +19,18 @@ function MedcineDashHeader({ btnText }) {
   return (
     <div className="MedcineDash-header-container">
       {showAddModal === true ? (
-        <AddUserModal setShowAddModal={setShowAddModal} />
+        <div
+          style={{
+            width: "100%",
+            height: "100vh",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {/* <AddApointmentModal setShowAddModal={setShowAddModal} /> */}
+          <AddUserModal setShowAddModal={setShowAddModal} />
+        </div>
       ) : (
         <>
           {btnText && (
@@ -30,7 +42,7 @@ function MedcineDashHeader({ btnText }) {
             </button>
           )}
           <div className="MedcineDash-header-right">
-            <h3>Nutritionniste </h3>
+            <h3>Dr. Zeineb Kraiem </h3>
             {/* <img
               src={NotificationIcon}
               alt="notification-icon"

@@ -1,55 +1,88 @@
-:root{
-   --purple-primary: #554DDE;
-   --accent-pink: #F44E77;
-   --neutral-light: #F2F6FF;
-   --lavender-secondary: #6A6D9E; /*Primary Font Color*/
-   --dark-primary: #16194F;
-   --border-colour: #CAD6F1;
+:root {
+  --purple-primary: #554dde;
+  --accent-pink: #f44e77;
+  --neutral-light: #f2f6ff;
+  --lavender-secondary: #6a6d9e; /*Primary Font Color*/
+  --dark-primary: #16194f;
+  --border-colour: #cad6f1;
 }
-*{
-   margin: 0;
-   padding: 0;
-   list-style: none;
-   box-sizing: border-box;
-   font-family: 'Nunito', sans-serif;
-   text-decoration: none;
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
 }
 
-body{
-   background-color: var(--neutral-light);
-   color: white;
-   font-size: 1.2rem;
-   font-family: 'Nunito', sans-serif;
-   font-family: Roboto, Helvetica, Arial, sans-serif;
-
+body {
+  background-color: var(--neutral-light);
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Nunito", sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 }
-a{
-   color: inherit;
+a {
+  color: inherit;
 }
-p{
-   color: var(--lavender-secondary);
-   line-height: 1.9rem;
+p {
+  color: var(--lavender-secondary);
+  line-height: 1.9rem;
 }
-h2,h3,h4,h5,h6{
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--lavender-secondary);
 }
-.secondary-heading{
-   font-size: 2.5rem;
-   color: var(--purple-primary);
-   text-align: center;
-
-
+.secondary-heading {
+  font-size: 2.5rem;
+  color: var(--purple-primary);
+  text-align: center;
 }
-.small-heading{
-   font-size: 2.5rem;
-   color: var(--purple-primary);
-   text-align: center;
+.small-heading {
+  font-size: 2.5rem;
+  color: var(--purple-primary);
+  text-align: center;
 }
 
-span{
-   color: var(--accent-pink);
+span {
+  color: var(--accent-pink);
 }
 
-.c-para{
-   text-align: center;
+.c-para {
+  text-align: center;
+}
+
+/* Modal ===============================================> */
+.modal {
+  padding: 100px;
+  width: 80%;
+}
+
+.modal form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.confirm-btn-primary {
+  background-color: green;
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.cancel-btn-primary {
+  background-color: rgb(201, 26, 26);
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: white;
 }

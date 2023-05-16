@@ -35,7 +35,7 @@ export const userCurrent = createAsyncThunk("user/current", async () => {
 
 export const deleteuser = createAsyncThunk("user/delete", async (id) => {
   try {
-    let result = axios.delete(`http://localhost:5000/user/${id}`);
+    let result = await axios.delete(`http://localhost:5000/user/${id}`);
     return result.data;
   } catch (error) {
     console.log(error);
@@ -44,8 +44,8 @@ export const deleteuser = createAsyncThunk("user/delete", async (id) => {
 
 export const getAllUsers = createAsyncThunk("user/getall", async () => {
   try {
-    let result = axios.get(`http://localhost:5000/user/all`);
-    return result;
+    let result = await axios.get(`http://localhost:5000/user/all`);
+    return await result.data;
   } catch (error) {
     console.log(error);
   }
@@ -137,7 +137,7 @@ export const userSlice = createSlice({
     },
     [getAllUsers.fulfilled]: (state, action) => {
       state.status = "success";
-      state.userList = action.payload.data.user;
+      state.userList = action.payload.user;
     },
     [getAllUsers.rejected]: (state) => {
       state.status = "fail";

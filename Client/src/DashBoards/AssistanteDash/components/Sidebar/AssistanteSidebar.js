@@ -18,7 +18,7 @@ function AssistanteSidebar({ menu }) {
         setActive(element.id);
       }
     });
-  }, [location.pathname,menu]);
+  }, [location.pathname, menu]);
 
   const __navigate = (id) => {
     setActive(id);
@@ -50,7 +50,7 @@ function AssistanteSidebar({ menu }) {
               }, 600);
             }}
           >
-            <h1 className="Assistante-sidebar-item-label">Logout</h1>
+            <h1 className="Assistante-sidebar-item-label">Déconnexion</h1>
             <img
               src={LogoutIcon}
               alt="icon-logout"

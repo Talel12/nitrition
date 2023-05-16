@@ -1,0 +1,22 @@
+.Article-Form {
+  padding: 50px;
+  background-color: rgb(221, 221, 221);
+  display: flex;
+  flex-direction: column;
+}
+
+.Article-Form .form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px 40px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  align-self: center;
+}
+
+.Article-Form input[type="submit"] {
+  min-width: none !important;
+  background-color: cornflowerblue;
+  color: aliceblue;
+}

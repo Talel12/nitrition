@@ -83,25 +83,40 @@ function Rendezvous() {
   // ]
 
   return showEditModal ? (
-    <div style={{ width: "100vw", height: "100vh" }}>
+    <div
+      style={{
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <UpdateApointmentModal
         setShowEditModal={setShowEditModal}
         currentAppointment={currentAppointment}
       />
     </div>
-  ) : showAddModal ? (
-    <div
-      style={{ width: "100vw", height: "100vh", display: "flex", padding: 80 }}
-    >
-      <AddApointmentModal setShowAddModal={setShowAddModal} />
-    </div>
   ) : (
+    // : showAddModal ? (
+    //   <div
+    //     style={{
+    //       width: "100%",
+    //       height: "100vh",
+    //       display: "flex",
+    //       justifyContent: "center",
+    //       alignItems: "center",
+    //     }}
+    //   >
+    //     <AddApointmentModal setShowAddModal={setShowAddModal} />
+    //   </div>
+    // )
     <div className="AssistanteDash-content">
       <AssistanteDashHeader
         btnText="Ajouter un rendez-vous"
         eventTitle={"appointment"}
       />
-      <div style={{ height: "100vh" }}>
+      <div style={{ height: "85vh" }}>
         <Kalend
           autoScroll={true}
           showTimeLine={true}
@@ -121,7 +136,7 @@ function Rendezvous() {
           language={"fr"}
         />
       </div>
-
+      {/* 
       <div className="AssistanteDash-content-container">
         <div className="AssistanteDash-content-header">
           <h2>Users List</h2>
@@ -220,8 +235,8 @@ function Rendezvous() {
           <div className="AssistanteDash-content-footer">
             <span className="empty-table">No data</span>
           </div>
-        )}
-      </div>
+        )} */}
+      {/* </div> */}
     </div>
   );
 }

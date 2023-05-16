@@ -40,7 +40,7 @@ const PatientArticleDetails = () => {
           </p>
           {source && (
             <a href={source} target="_blank">
-              voir source
+              <span>voir source</span>
             </a>
           )}
         </div>
