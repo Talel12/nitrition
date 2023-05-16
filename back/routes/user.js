@@ -62,7 +62,7 @@ router.post("/register", registerRules(), validation, async (req, res) => {
     const salt = 10;
     const genSalt = await bcrypt.genSalt(salt);
     const hashedPassword = await bcrypt.hash(password, genSalt);
-    console.log(hashedPassword);
+    // console.log(hashedPassword);
     newUser.password = hashedPassword;
     // generation token
     //save  the user

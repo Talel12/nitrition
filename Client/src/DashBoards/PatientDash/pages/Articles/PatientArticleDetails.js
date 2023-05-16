@@ -22,8 +22,6 @@ const PatientArticleDetails = () => {
             width: "30vw",
             height: "80vh",
             objectFit: "cover",
-            //   opacity: 0.1,
-            //   position: "absolute",
             margin: "auto",
             alignSelf: "center",
             borderRadius: "15px",
@@ -33,11 +31,7 @@ const PatientArticleDetails = () => {
         />
 
         <div style={{ padding: 50, width: "60%" }}>
-          <p
-          //  style={{ width: "70%" }}
-          >
-            {body}
-          </p>
+          <p>{body}</p>
           {source && (
             <a href={source} target="_blank">
               <span>voir source</span>

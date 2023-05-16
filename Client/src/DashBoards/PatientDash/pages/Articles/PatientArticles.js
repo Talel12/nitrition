@@ -24,6 +24,7 @@ const PatientArticles = () => {
           {articles.map((article, i) => (
             <>
               <Link
+                key={i}
                 style={{ width: "40%", cursor: "pointer" }}
                 to={
                   path.toLowerCase().includes("assistant")

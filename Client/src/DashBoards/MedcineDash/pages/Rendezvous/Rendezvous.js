@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import AssistanteDashHeader from "../../components/AssistanteDashHeader/AssistanteDashHeader";
 
 import all_orders from "../../constants/orders";
 import { calculateRange, sliceData } from "../../utils/table-pagination";
@@ -107,12 +106,10 @@ function Rendezvous() {
 
         <table>
           <thead>
-            {/* <th>ID</th> */}
             <th>PATIENT</th>
             <th>DATE</th>
             <th>L'HEURE</th>
             <th>STATUS</th>
-            {/* <th>REVENUE</th> */}
           </thead>
 
           {orders.length !== 0 ? (
@@ -133,9 +130,6 @@ function Rendezvous() {
                       </span>
                     </div>
                   </td>
-                  {/* <td>
-                    <span>{order._id}</span>
-                  </td> */}
                   <td>
                     <span>{order?.startAt?.slice(0, 10)}</span>
                   </td>
@@ -164,13 +158,7 @@ function Rendezvous() {
                           className="AssistanteDash-content-icon"
                         />
                       ) : null}
-                      {/* <span>
-                        {order.status === "Scheduled"
-                          ? "En Cours"
-                          : order.status === "Cancelled"
-                          ? "Refuser"
-                          : "Confirmer"}
-                      </span> */}
+
                       <select
                         defaultValue={order?.status}
                         onChange={(e) => {
@@ -183,7 +171,6 @@ function Rendezvous() {
                           setTimeout(() => {
                             refresh();
                           }, 600);
-                          // setStatus(e.target.value);
                         }}
                       >
                         <option value="Scheduled">En Cours</option>
@@ -201,9 +188,6 @@ function Rendezvous() {
                         }}
                         onClick={() => {
                           dispatch(deleteAppointment(order._id));
-                          // setTimeout(() => {
-                          //   refresh();
-                          // }, 600);
                         }}
                       >
                         Supprimer
@@ -245,9 +229,6 @@ function Rendezvous() {
           hourHeight={300}
           initialView={CalendarView.WEEK}
           disabledViews={[CalendarView.DAY]}
-          // onSelectView={onSelectView}
-          // selectedView={selectedView}
-          // onPageChange={onPageChange}
           timeFormat={"24"}
           weekDayStart={"Monday"}
           calendarIDsHidden={["work"]}

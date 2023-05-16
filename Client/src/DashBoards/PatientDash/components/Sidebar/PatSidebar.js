@@ -18,7 +18,7 @@ function PatSidebar({ menu }) {
         setActive(element.id);
       }
     });
-  }, [location.pathname ,menu]);
+  }, [location.pathname, menu]);
 
   const __navigate = (id) => {
     setActive(id);
@@ -29,7 +29,6 @@ function PatSidebar({ menu }) {
       <div className="PatSidebar-container">
         <div className="PatSidebar-logo-container">
           <img src={logo} alt="logo" />
-          {/* <h2>PatientDash</h2> */}
         </div>
 
         <div className="PatSidebar-container">

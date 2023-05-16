@@ -7,7 +7,6 @@ const CoachFooter = () => {
     <>
       <div className="footer">
         <section className="socials">
-          {/* <h2>Nous contacter</h2> */}
           <div className="social_icons">
             <a href="https://instagram.com/sarrathabti?igshid=YmMyMTA2M2Y=">
               <img
@@ -27,13 +26,6 @@ const CoachFooter = () => {
                 alt="phone"
               />
             </a>
-
-            {/* <a href="mailto:Kr.zeineb@gmail.com">
-              <img
-                src="https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png"
-                alt="gmail"
-              />
-            </a> */}
           </div>
         </section>
       </div>

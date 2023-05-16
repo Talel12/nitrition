@@ -11,7 +11,6 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
   const [email, setEmail] = useState(user.email);
   const [password, setPassword] = useState(user.password);
   const [CIN, setCIN] = useState(user.CIN);
-  console.log("heeey", user._id);
 
   const dispatch = useDispatch();
   const refresh = () => {
@@ -27,8 +26,6 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
       password: password,
       CIN: CIN,
     };
-    console.log(updatedUser);
-    console.log(user._id);
     dispatch(edituser({ id: user._id, newuser: updatedUser }));
     setShowUpdateModal(false);
     refresh();
@@ -47,7 +44,7 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
             <h2>Prénom:</h2>
             <input
               type="text"
-              autocomplete=""
+              autoComplete=""
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -56,7 +53,7 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
             <h2>Nom:</h2>
             <input
               type="text"
-              autocomplete=""
+              autoComplete=""
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
@@ -67,7 +64,7 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
             <h2>Email:</h2>
             <input
               type="email"
-              autocomplete=""
+              autoComplete=""
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               readOnly
@@ -77,7 +74,7 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
             <h2>CIN:</h2>
             <input
               type="number"
-              autocomplete=""
+              autoComplete=""
               value={CIN}
               onChange={(e) => setCIN(e.target.value)}
             />
@@ -88,7 +85,7 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
             <h2>Mot de passe:</h2>
             <input
               type="password"
-              autocomplete="current-password"
+              autoComplete="current-password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />

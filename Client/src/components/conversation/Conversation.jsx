@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { saveUser } from "../../redux/chatSlice.js/chatSlice";
-// import { getUser } from "../../api/UserRequests";
+import { getUser } from "../../api/UserRequests";
 const Conversation = ({ data, currentUser, online }) => {
   const [userData, setUserData] = useState(null);
   const dispatch = useDispatch();
@@ -13,8 +13,8 @@ const Conversation = ({ data, currentUser, online }) => {
 
     const getUserData = async () => {
       try {
-        // const { data } = await getUser(userId);
-        // setUserData(data);
+        const { data } = await getUser(userId);
+        setUserData(data);
         dispatch(saveUser(userdata));
         // dispatch({ type: "SAVE_USER", data: data });
       } catch (error) {

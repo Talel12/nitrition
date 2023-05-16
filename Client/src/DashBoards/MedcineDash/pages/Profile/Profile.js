@@ -21,8 +21,6 @@ const Profile = () => {
       ...user,
       ...newUser,
     };
-    console.log(updatedUser);
-    console.log(user._id);
     dispatch(edituser({ id: user._id, newuser: updatedUser }));
     refresh();
   };
@@ -50,8 +48,6 @@ const Profile = () => {
         </form>
       </div>
       <div className="profile-show">
-        {/* <h2>Profile</h2> */}
-        {/* <DataGridDemo /> */}
         <img src={user?.img} alt="" />
         <h3>{user?.name || "Prénom"}</h3>
         <h3>{user?.LastName || "Nom"}</h3>

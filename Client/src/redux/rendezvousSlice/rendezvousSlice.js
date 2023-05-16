@@ -29,7 +29,6 @@ export const addAppointment = createAsyncThunk(
 export const updateAppointment = createAsyncThunk(
   "appointments/updateAppointment",
   async (appointment) => {
-    console.log(appointment);
     const response = await axios.put(
       `http://localhost:5000/rendezvous/${appointment._id}`,
       appointment

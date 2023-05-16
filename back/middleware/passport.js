@@ -13,7 +13,6 @@ passport.use(
         .select("-password")
         .populate("rendezvous")
         .populate("dossier");
-      console.log(user);
       user ? done(null, user) : done(null, false);
     } catch (error) {
       console.log(error);

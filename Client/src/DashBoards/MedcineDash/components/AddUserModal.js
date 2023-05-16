@@ -22,7 +22,6 @@ function AddUserModal({ setShowAddModal }) {
       email: email,
       password: password,
     };
-    console.log(newuser);
     dispatch(userRegister(newuser));
     setShowAddModal(false);
     refresh();

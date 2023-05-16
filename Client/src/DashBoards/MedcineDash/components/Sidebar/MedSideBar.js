@@ -18,7 +18,7 @@ function MedSideBar({ menu }) {
         setActive(element.id);
       }
     });
-  }, [location.pathname,menu]);
+  }, [location.pathname, menu]);
 
   const __navigate = (id) => {
     setActive(id);
@@ -29,7 +29,6 @@ function MedSideBar({ menu }) {
       <div className="Medcine-Sidebar-container">
         <div className="Medcine-Sidebar-logo-container">
           <img src={logo} alt="logo" />
-          {/* <h2>MedcineDash</h2> */}
         </div>
 
         <div className="Medcine-Sidebar-container">

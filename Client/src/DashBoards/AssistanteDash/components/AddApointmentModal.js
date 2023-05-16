@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { addMinutes } from "date-fns";
 import { addAppointment } from "../../../redux/rendezvousSlice/rendezvousSlice";
 import DatalistInput from "react-datalist-input";
 
 function AddApointmentModal({ setShowAddModal }) {
-  const patientId = useSelector((store) => store?.user?.user?._id);
+  // const patientId = useSelector((store) => store?.user?.user?._id);
   const patientList = useSelector((store) =>
     store?.user?.userList
       ?.filter((user) => user.role === "patient")
@@ -33,7 +32,6 @@ function AddApointmentModal({ setShowAddModal }) {
       summary: summary,
       patient: patient,
     };
-    console.log(newappointment);
     dispatch(addAppointment({ ...newappointment }));
     setShowAddModal(false);
     setTimeout(() => {
@@ -52,45 +50,6 @@ function AddApointmentModal({ setShowAddModal }) {
     >
       {" "}
       <h2>Ajouter un rendez-vous</h2>
-      {/* <form onSubmit={handleSubmit}>
-        <div>
-          <div>
-            <h3>Date de rendez-vous:</h3>
-            <input
-              type="datetime-local"
-              autocomplete=""
-              placeholder="Date"
-              onChange={(e) => {
-                setStartAT(e.target.value);
-                setEndAt(
-                  addMinutes(new Date(e.target.value), 15).toISOString()
-                );
-              }}
-            />
-          </div>
-
-          <div>
-            <h3>Note:</h3>
-            <input //summary=Note
-              type="text"
-              defaultValue={summary}
-              autocomplete=""
-              placeholder="Note"
-              onChange={(e) => setSummary(e.target.value)}
-            />
-          </div>
-        </div>
-        <button className="confirm-btn-primary" type="submit">
-          Ajouter
-        </button>
-        <button
-          className="cancel-btn-primary"
-          type="button"
-          onClick={handleCloseButtonClick}
-        >
-          Annuler
-        </button>
-      </form> */}
       <form onSubmit={handleSubmit}>
         <div>
           <div>
@@ -98,7 +57,7 @@ function AddApointmentModal({ setShowAddModal }) {
             <input
               // value={startAt.substr(0, 19)}
               type="datetime-local"
-              autocomplete=""
+              autoComplete=""
               placeholder="Start Date"
               onChange={(e) => {
                 setStartAt(e.target.value);
@@ -108,10 +67,7 @@ function AddApointmentModal({ setShowAddModal }) {
           <div>
             <h2>Fin de consultation:</h2>
             <input
-              // value={endAt.substr(0, 19)}
               type="datetime-local"
-              // autocomplete=""
-              // placeholder="End Date"
               onChange={(e) => {
                 setEndAt(e.target.value);
               }}
@@ -123,17 +79,14 @@ function AddApointmentModal({ setShowAddModal }) {
             <h2>Note:</h2>
             <input
               type="text"
-              autocomplete=""
-              // defaultValue={summary}
+              autoComplete=""
               onChange={(e) => setSummary(e.target.value)}
-              // disabled
             />
           </div>
           <div>
             <h2>Status:</h2>
-            {/* <p>"{status}"</p> */}
             <span>Modifier : </span>
-            <select onChange={(e) => setStatus(e.target.value)}>
+            <select value={status} onChange={(e) => setStatus(e.target.value)}>
               <option value="Scheduled">En Cours</option>
               <option value="Accepted">Confirmer</option>
               <option value="Cancelled">Annuler</option>

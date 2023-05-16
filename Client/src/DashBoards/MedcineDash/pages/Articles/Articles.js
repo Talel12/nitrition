@@ -1,23 +1,17 @@
 import React, { useEffect, useState } from "react";
-import MedcineDashHeader from "../../components/MedcineDashHeader/MedcineDashHeader";
-import UpdateArticleModal from "../../components/UpdateUserModal";
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 import { useDispatch, useSelector } from "react-redux";
-// import { deletearticle } from "../../../../redux/userSlice/userSlice";
 import {
   createArticle,
   deleteArticle,
 } from "../../../../redux/articleSlice/articleSlice";
 import "./article.css";
-import { width } from "@mui/system";
 
 const Articles = () => {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [pagination, setPagination] = useState([]);
   const [article, setarticle] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
-  const [showUpdateModal, setShowUpdateModal] = useState(false);
   const dispatch = useDispatch();
   const [newArticle, setNewArticle] = useState({});
   const handleChange = (e) => {
@@ -29,7 +23,7 @@ const Articles = () => {
   useEffect(() => {
     setPagination(calculateRange(articlesList, 5));
     setarticle(sliceData(articlesList, page, 5));
-  }, [articlesList]);
+  }, [articlesList, page]);
 
   // Search
   const handleSearch = (event) => {
@@ -50,12 +44,6 @@ const Articles = () => {
   const handleChangePage = (new_page) => {
     setPage(new_page);
     setarticle(sliceData(articlesList, new_page, 5));
-  };
-
-  // Handle the click event on the "Modifier" button
-  const handleUpdateButtonClick = (user) => {
-    setSelectedUser(user);
-    setShowUpdateModal(true);
   };
 
   const refresh = () => {
@@ -141,7 +129,6 @@ const Articles = () => {
             <th>IMAGE</th>
             <th>TITRE</th>
             <th>CONTENU</th>
-            {/* <th>UPDATE</th> */}
             <th>SUPPRIMER</th>
           </thead>
 
@@ -171,18 +158,7 @@ const Articles = () => {
                   <td>
                     <span>{article.body}</span>
                   </td>
-                  {/* <td>
-                    <span>
-                      <button
-                        className="upd-grad"
-                        onClick={() => {
-                          handleUpdateButtonClick(article);
-                        }}
-                      >
-                        Modifier
-                      </button>
-                    </span>
-                  </td> */}
+
                   <td>
                     <span>
                       <button
