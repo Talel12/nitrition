@@ -14,19 +14,14 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
       }))
   );
 
-  //   const location=useLocation()
-  //   const path=location.pathname
   const [startAt, setStartAt] = useState(currentAppointment?.startAt);
   const [endAt, setEndAt] = useState(currentAppointment?.endAt);
   const [summary, setSummary] = useState(currentAppointment?.summary);
   const [status, setStatus] = useState(currentAppointment?.status);
   const [patient, setPatient] = useState(currentAppointment?.patient);
-  //   console.log('heeey',currentAppointment._id)
 
   const dispatch = useDispatch();
-  // const refresh = () => {
-  //   window.location.reload();
-  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const updatedAppointment = {
@@ -37,7 +32,6 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
       status: status,
       patient: patient,
     };
-    console.log(updatedAppointment);
     dispatch(updateAppointment(updatedAppointment));
     setShowEditModal(false);
     setTimeout(() => {
@@ -60,7 +54,7 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
             <input
               value={startAt.substr(0, 19)}
               type="datetime-local"
-              autocomplete=""
+              autoComplete=""
               placeholder="Start Date"
               onChange={(e) => {
                 setStartAt(e.target.value);
@@ -72,8 +66,6 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
             <input
               value={endAt.substr(0, 19)}
               type="datetime-local"
-              // autocomplete=""
-              // placeholder="End Date"
               onChange={(e) => {
                 setEndAt(e.target.value);
               }}
@@ -85,10 +77,9 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
             <h2>Note:</h2>
             <input
               type="text"
-              autocomplete=""
+              autoComplete=""
               defaultValue={summary}
               onChange={(e) => setSummary(e.target.value)}
-              // disabled
             />
           </div>
           <div>

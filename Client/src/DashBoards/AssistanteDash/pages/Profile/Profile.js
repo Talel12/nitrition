@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./profile.css";
-import DataGridDemo from "../../components/DataGrid/DataGrid";
 import { useDispatch, useSelector } from "react-redux";
 import { edituser } from "../../../../redux/userSlice/userSlice";
 import { refresh } from "../../../../App";
@@ -23,7 +22,7 @@ const Profile = () => {
     refresh();
   };
 
-  http: return (
+  return (
     <div className="profile-container">
       <div className="profile-input-container">
         <form onSubmit={handleSubmit}>
@@ -42,10 +41,7 @@ const Profile = () => {
         </form>
       </div>
       <div className="profile-show">
-        {/* <h2>Profile</h2> */}
-        {/* <DataGridDemo /> */}
-
-        <img src={user?.img} />
+        <img src={user?.img} alt="avartar" />
         <h3>{user?.name || "Prenom"}</h3>
         <h3>{user?.LastName || "Nom"}</h3>
         <h3>{user?.CIN}</h3>

@@ -6,7 +6,6 @@ import { calculateRange, sliceData } from "../../utils/table-pagination";
 
 import "../MedPagesStyles.css";
 
-import DossierIcon from "../../../../assets/img/folder-icon.svg";
 import DossierCard from "./DossierCard";
 
 function Dossier() {

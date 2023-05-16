@@ -22,7 +22,6 @@ function AddUserModal({ setShowAddModal }) {
       email: email,
       password: password,
     };
-    console.log(newuser);
     dispatch(userRegister(newuser));
     setShowAddModal(false);
     refresh();
@@ -43,7 +42,7 @@ function AddUserModal({ setShowAddModal }) {
             <h3>Prénom:</h3>
             <input
               type="text"
-              autocomplete=""
+              autoComplete=""
               placeholder="Prénom"
               onChange={(e) => setName(e.target.value)}
             />
@@ -52,7 +51,7 @@ function AddUserModal({ setShowAddModal }) {
             <h3>Nom:</h3>
             <input
               type="text"
-              autocomplete=""
+              autoComplete=""
               placeholder="Nom"
               onChange={(e) => setLastName(e.target.value)}
             />
@@ -63,7 +62,7 @@ function AddUserModal({ setShowAddModal }) {
             <h3>Email:</h3>
             <input
               type="email"
-              autocomplete=""
+              autoComplete=""
               placeholder="email"
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -72,7 +71,7 @@ function AddUserModal({ setShowAddModal }) {
             <h3>Mot de Passe:</h3>
             <input
               type="password"
-              autocomplete="current-password"
+              autoComplete="current-password"
               placeholder="mot de passe"
               onChange={(e) => setPassword(e.target.value)}
             />

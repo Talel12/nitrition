@@ -1,7 +1,5 @@
 .consulation-prescription-container {
   width: 60%;
-  /* height: 300px; */
-  /* background-color: #1c1c1c; */
   display: flex;
   flex-direction: column;
   align-items: center;

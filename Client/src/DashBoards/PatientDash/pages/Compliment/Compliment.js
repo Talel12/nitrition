@@ -1,17 +1,10 @@
 import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchConsultationbyID } from "../../../../redux/consultationSlice/consultationSlice";
+import { useSelector } from "react-redux";
 import ComplimentCard from "./ComplimentCard";
 
 const Compliment = () => {
   const dossier = useSelector((store) => store?.user?.user?.dossier || null);
-  const dispatch = useDispatch();
-  console.log(dossier);
-  useEffect(() => {
-    // dossier.consultaions
-    // dispatch(fetchConsultationbyID(id));
-  }, []);
-  console.log(dossier);
+  useEffect(() => {}, []);
   return (
     <div
       style={{

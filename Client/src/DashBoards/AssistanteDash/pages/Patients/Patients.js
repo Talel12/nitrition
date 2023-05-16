@@ -7,7 +7,6 @@ import { deleteuser } from "../../../../redux/userSlice/userSlice";
 
 import "../AssPagesStyles.css";
 
-
 function Patients() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -26,7 +25,7 @@ function Patients() {
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
     setPatient(sliceData(patientsList, page, 5));
-  }, [patientsList,page]);
+  }, [page]);
 
   // Search
   const handleSearch = (event) => {

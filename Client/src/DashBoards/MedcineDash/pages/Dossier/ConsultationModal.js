@@ -26,13 +26,6 @@ const ConsultationModal = ({ patient, patientDossier, setShowModal }) => {
         patientDossier,
       })
     );
-    console.log({
-      ...consultation,
-      prescription: prescription,
-      date: Date.now(),
-      patient,
-      patientDossier,
-    });
     setShowModal(false);
     setTimeout(() => {
       refresh();

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 import "./MedHeaderstyles.css";
-// import NotificationIcon from "../../assets/icons/notification.svg";
-// import SettingsIcon from "../../assets/icons/settings.svg";
 import AddUserModal from "../AddUserModal";
 import { useSelector } from "react-redux";
 import AddApointmentModal from "../../../AssistanteDash/components/AddApointmentModal";
@@ -28,7 +26,6 @@ function MedcineDashHeader({ btnText }) {
             alignItems: "center",
           }}
         >
-          {/* <AddApointmentModal setShowAddModal={setShowAddModal} /> */}
           <AddUserModal setShowAddModal={setShowAddModal} />
         </div>
       ) : (
@@ -43,23 +40,12 @@ function MedcineDashHeader({ btnText }) {
           )}
           <div className="MedcineDash-header-right">
             <h3>Dr. Zeineb Kraiem </h3>
-            {/* <img
-              src={NotificationIcon}
-              alt="notification-icon"
-              className="MedcineDash-header-icon"
-            />
-            <img
-              src={SettingsIcon}
-              alt="settings-icon"
-              className="MedcineDash-header-icon"
-            /> */}
 
             <img
               className="MedcineDash-header-avatar"
               style={{ marginLeft: 20 }}
               src={user?.img}
-              // src="https://reqres.in/img/faces/9-image.jpg"
-              alt=""
+              alt="avatar"
             />
           </div>
         </>

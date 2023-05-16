@@ -8,7 +8,6 @@ const ComplimentCard = ({ dossier }) => {
   );
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log(consult);
     if (consult) {
       dispatch(fetchConsultationbyID(consult));
     }

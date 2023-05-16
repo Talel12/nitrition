@@ -40,17 +40,10 @@ const DossierCard = ({ user, index }) => {
                 setAddDossierShowModal(true);
               }}
             >
-              <img src={DossierIcon} width={25} />
+              <img src={DossierIcon} width={25} alt="dossier" />
             </button>
           </span>
         </td>
-        {/* <td>
-                    <span>
-                      <button className="supp-grad" style={{ padding: 10 }}>
-                        Supprimer
-                      </button>
-                    </span>
-                  </td> */}
       </tr>
     </>
   );

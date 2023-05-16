@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 // eslint-disable-next-line
 import "./AssHeaderStyles.css";
-import NotificationIcon from "../../assets/icons/notification.svg";
-import SettingsIcon from "../../assets/icons/settings.svg";
+
 import AddUserModal from "../AddUserModal";
 import AddApointmentModal from "../AddApointmentModal";
 import { useSelector } from "react-redux";
@@ -46,23 +45,12 @@ function AssistanteDashHeader({ btnText, eventTitle }) {
 
           <div className="AssistanteDash-header-right">
             <h3>Assistant</h3>
-            {/* <img
-              src={NotificationIcon}
-              alt="notification-icon"
-              className="AssistanteDash-header-icon"
-            />
-            <img
-              src={SettingsIcon}
-              alt="settings-icon"
-              className="AssistanteDash-header-icon"
-            /> */}
+
             <img
               style={{ marginLeft: 20 }}
               className="AssistanteDash-header-avatar"
               src={user?.img}
-              // src="https://reqres.in/img/faces/9-image.jpg"
-
-              alt=""
+              alt="avatar"
             />
           </div>
         </>
