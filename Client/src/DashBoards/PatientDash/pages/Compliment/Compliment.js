@@ -4,7 +4,7 @@ import { fetchConsultationbyID } from "../../../../redux/consultationSlice/consu
 import ComplimentCard from "./ComplimentCard";
 
 const Compliment = () => {
-  const dossier = useSelector((store) => store?.user?.user?.dossier);
+  const dossier = useSelector((store) => store?.user?.user?.dossier || null);
   const dispatch = useDispatch();
   console.log(dossier);
   useEffect(() => {

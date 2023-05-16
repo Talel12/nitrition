@@ -35,12 +35,12 @@ const DossierCard = ({ user, index }) => {
             {" "}
             <button
               className="upd-grad"
-              style={{ padding: "10px 20px" }}
+              style={{ padding: "5px 10px" }}
               onClick={() => {
                 setAddDossierShowModal(true);
               }}
             >
-              <img src={DossierIcon} width={30} />
+              <img src={DossierIcon} width={25} />
             </button>
           </span>
         </td>

@@ -51,6 +51,9 @@ import { fetchArticle } from "./redux/articleSlice/articleSlice";
 import Conversation from "./components/conversation/Conversation";
 import Chat from "./pages/chat/Chat";
 import PatientArticleDetails from "./DashBoards/PatientDash/pages/Articles/PatientArticleDetails";
+import MedecinPrivateRoute from "./route/MedecinPrivateRoute";
+import AssistantPrivateRoute from "./route/AssitantPrivateRoute";
+import PatientPrivateRoute from "./route/PatientPrivateRoute";
 
 function App() {
   const [ping, setPing] = useState(false);
@@ -89,112 +92,134 @@ function App() {
           element={<AssistanteDash ping={ping} setPing={setPing} />}
         />
         <Route element={<PrivateRoute />}>
-          <Route path="/medcinedash" element={<MedcineDash />}>
-            <Route path="*" element={<P404 />} />
-            <Route exact path="/medcinedash/" element={<MedcinePatients />} />
-            <Route exact path="/medcinedash/users" element={<MedcineUsers />} />
-            <Route
-              exact
-              path="/medcinedash/dossier"
-              element={<MedcineDossier />}
-            />
-            <Route exact path="/medcinedash/chat" element={<Chat />} />
-            <Route
-              exact
-              path="/medcinedash/patients"
-              element={<MedcinePatients />}
-            />
-            <Route
-              exact
-              path="/medcinedash/rendezvous"
-              element={<MedcineRendezvous />}
-            />
-            <Route
-              exact
-              path="/medcinedash/profile"
-              element={<MedcineProfile />}
-            />
-            <Route
-              exact
-              path="/medcinedash/Articles"
-              element={<MedcineArticles />}
-            />
-            <Route
-              exact
-              path="/medcinedash/discussion"
-              element={<MedcineDiscussion />}
-            />
+          <Route element={<MedecinPrivateRoute />}>
+            <Route path="/medcinedash" element={<MedcineDash />}>
+              <Route path="*" element={<P404 />} />
+              <Route exact path="/medcinedash/" element={<MedcinePatients />} />
+              <Route
+                exact
+                path="/medcinedash/users"
+                element={<MedcineUsers />}
+              />
+              <Route
+                exact
+                path="/medcinedash/dossier"
+                element={<MedcineDossier />}
+              />
+              <Route exact path="/medcinedash/chat" element={<Chat />} />
+              <Route
+                exact
+                path="/medcinedash/patients"
+                element={<MedcinePatients />}
+              />
+              <Route
+                exact
+                path="/medcinedash/rendezvous"
+                element={<MedcineRendezvous />}
+              />
+              <Route
+                exact
+                path="/medcinedash/profile"
+                element={<MedcineProfile />}
+              />
+              <Route
+                exact
+                path="/medcinedash/Articles"
+                element={<MedcineArticles />}
+              />
+              <Route
+                exact
+                path="/medcinedash/discussion"
+                element={<MedcineDiscussion />}
+              />
+            </Route>
           </Route>
         </Route>
 
         <Route element={<PrivateRoute />}>
-          <Route path="/assistantedash" element={<AssistanteDash />}>
-            <Route path="*" element={<P404 />} />
-            <Route
-              exact
-              path="/assistantedash/"
-              element={<AssistantePatients />}
-            />
+          <Route element={<AssistantPrivateRoute />}>
+            <Route path="/assistantedash" element={<AssistanteDash />}>
+              <Route path="*" element={<P404 />} />
+              <Route
+                exact
+                path="/assistantedash/"
+                element={<AssistantePatients />}
+              />
 
-            <Route
-              exact
-              path="/assistantedash/blog"
-              element={<PatientArticles />}
-            />
-            <Route
-              exact
-              path="/assistantedash/blog/:blogId"
-              element={<PatientArticleDetails />}
-            />
-            <Route
-              exact
-              path="/assistantedash/patients"
-              element={<AssistantePatients />}
-            />
-            <Route
-              exact
-              path="/assistantedash/rendezvous"
-              element={<AssistanteRendezvous />}
-            />
-            <Route
-              exact
-              path="/assistantedash/profile"
-              element={<AssistanteProfile />}
-            />
+              <Route
+                exact
+                path="/assistantedash/blog"
+                element={<PatientArticles />}
+              />
+              <Route
+                exact
+                path="/assistantedash/blog/:blogId"
+                element={<PatientArticleDetails />}
+              />
+              <Route
+                exact
+                path="/assistantedash/patients"
+                element={<AssistantePatients />}
+              />
+              <Route
+                exact
+                path="/assistantedash/rendezvous"
+                element={<AssistanteRendezvous />}
+              />
+              <Route
+                exact
+                path="/assistantedash/profile"
+                element={<AssistanteProfile />}
+              />
+            </Route>
           </Route>
         </Route>
 
         <Route element={<PrivateRoute />}>
-          <Route path="/patientdash" element={<PatientDash />}>
-            <Route path="*" element={<P404 />} />
-            <Route exact path="/patientdash/" element={<PatientRendezvous />} />
-            <Route
-              exact
-              path="/patientdash/rendezvous"
-              element={<PatientRendezvous />}
-            />
-            <Route
-              exact
-              path="/patientdash/profile"
-              element={<PatientProfile />}
-            />
-            <Route exact path="/patientdash/coach" element={<PatientCoach />} />
-            <Route exact path="/patientdash/inbox" element={<PatientInbox />} />
-            <Route
-              exact
-              path="/patientdash/compliment"
-              element={<PatientCompliment />}
-            />
-            <Route
-              exact
-              path="/patientdash/articles"
-              element={<PatientArticles />}
-            />
-            <Route
-              exact
-              path="/patientdash/articles/:id"
-              element={<PatientArticleDetails />}
-            />
+          <Route element={<PatientPrivateRoute />}>
+            <Route path="/patientdash" element={<PatientDash />}>
+              <Route path="*" element={<P404 />} />
+              <Route
+                exact
+                path="/patientdash/"
+                element={<PatientRendezvous />}
+              />
+              <Route
+                exact
+                path="/patientdash/rendezvous"
+                element={<PatientRendezvous />}
+              />
+              <Route
+                exact
+                path="/patientdash/profile"
+                element={<PatientProfile />}
+              />
+              <Route
+                exact
+                path="/patientdash/coach"
+                element={<PatientCoach />}
+              />
+              <Route
+                exact
+                path="/patientdash/inbox"
+                element={<PatientInbox />}
+              />
+              <Route
+                exact
+                path="/patientdash/compliment"
+                element={<PatientCompliment />}
+              />
+              <Route
+                exact
+                path="/patientdash/articles"
+                element={<PatientArticles />}
+              />
+              <Route
+                exact
+                path="/patientdash/articles/:id"
+                element={<PatientArticleDetails />}
+              />
+            </Route>
           </Route>
         </Route>
 

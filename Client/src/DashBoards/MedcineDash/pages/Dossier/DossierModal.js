@@ -42,7 +42,7 @@ const DossierModal = ({ dossier, showModal }) => {
   };
   return (
     <div className="modal-container">
-      <h2>Dossier de Patient {dossier?.name}</h2>
+      <h2>Dossier de Patient: {dossier?.name}</h2>
       {!dossier.dossier ? (
         <div>
           <form
@@ -101,9 +101,12 @@ const DossierModal = ({ dossier, showModal }) => {
             </p>
           </div>
           <div className="dossier-pation-consultation-container">
-            <ConsultationCard />
+            <ConsultationCard
+              patient={dossier?._id}
+              patientDossier={currentDossier?._id}
+            />
             {currentDossier?.consultations?.map((consultation, index) => (
-              <ConsultationCard consultation={consultation} />
+              <ConsultationCard consultation={consultation} key={index} />
             ))}
           </div>
         </div>

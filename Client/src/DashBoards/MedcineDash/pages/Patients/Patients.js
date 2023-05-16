@@ -7,7 +7,6 @@ import { deleteuser } from "../../../../redux/userSlice/userSlice";
 
 import "../MedPagesStyles.css";
 
-
 function Patients() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -25,8 +24,10 @@ function Patients() {
 
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
-    setPatient(sliceData(patientsList, page, 5));
-  }, [patientsList,page]);
+    if (patient?.length === 0) {
+      setPatient(sliceData(patientsList, page, 5));
+    }
+  }, [patient, page]);
 
   // Search
   const handleSearch = (event) => {
@@ -34,8 +35,9 @@ function Patients() {
     if (event.target.value !== "") {
       let search_results = patientsList.filter(
         (item) =>
-          item.name.toLowerCase().includes(search.toLowerCase()) ||
-          item.LastName.toLowerCase().includes(search.toLowerCase())
+          item?.name.toLowerCase().includes(search.toLowerCase()) ||
+          item?.email.toLowerCase().includes(search.toLowerCase()) ||
+          item?.CIN.toLowerCase().includes(search.toLowerCase())
       );
       setPatient(search_results);
     } else {

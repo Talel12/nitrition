@@ -5,10 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { edituser } from "../../../../redux/userSlice/userSlice";
 import { refresh } from "../../../../App";
 
-
 const Profile = () => {
   const user = useSelector((store) => store?.user?.user);
-
 
   const [newUser, setNewUser] = useState(user);
 
@@ -39,7 +37,7 @@ const Profile = () => {
             className="upd-grad"
             style={{ width: 200, alignSelf: "flex-end", margin: 20 }}
           >
-            Modifier
+            Mise à jour
           </button>
         </form>
       </div>

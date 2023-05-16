@@ -1,15 +1,15 @@
-.inputContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-input{
-    width: 80%;
+input {
+  width: 80%;
   max-width: 350px;
   min-width: 250px;
   height: 40px;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   margin: 0.5rem 0;
   background-color: #f5f5f5;
   box-shadow: 0px 14px 9px -15px rgba(0, 0, 0, 0.25);
@@ -17,12 +17,10 @@ input{
   padding: 0 1rem;
   transition: all 0.2s ease-in;
   font-size: 0.9rem;
-
-  
 }
 input:hover {
-    transform: translateY(-3px);
-  }
+  transform: translateY(-3px);
+}
 
 /* .status{
     height: 10px;
@@ -40,4 +38,3 @@ input:hover {
        background: #42f0a7;
     }
 } */
-

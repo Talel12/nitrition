@@ -4,7 +4,7 @@ import "./PatHeaderStyles.css";
 import NotificationIcon from "../../assets/icons/notification.svg";
 import SettingsIcon from "../../assets/icons/settings.svg";
 import { useSelector } from "react-redux";
-import AddApointmentModal from "../../../AssistanteDash/components/AddApointmentModal";
+import AddApointmentModal from "../../pages/Rendezvous/AddApointmentModal";
 
 function PatientDashHeader({ btnText, onClick }) {
   const [showModal, setShowModal] = useState(false);

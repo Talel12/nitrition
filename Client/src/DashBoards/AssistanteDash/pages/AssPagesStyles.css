@@ -43,7 +43,7 @@
   border: 1px solid gray;
 }
 .AssistanteDash-content-search:focus {
-  outline: #04c400  auto 1px ;
+  outline: #04c400 auto 1px;
 }
 .AssistanteDash-content-input {
   font-style: inherit;
@@ -73,7 +73,7 @@ th {
   padding: 12px 24px;
   background: transparent;
   box-shadow: none;
-  color: #04c400 ;
+  color: #04c400;
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 1.25;
@@ -142,7 +142,7 @@ td span {
   margin: 0.2rem;
   border-radius: 5px;
   color: #ffffff;
-  background-color: #04c400 ;
+  background-color: #04c400;
   cursor: pointer;
 }
 .empty-table {
@@ -155,16 +155,20 @@ td span {
   border-color: #ffffff;
 }
 
-      
 .upd-grad {
-  background-image: linear-gradient(to right, #4CB8C4 0%, #3CD3AD  51%, #4CB8C4  100%);
+  background-image: linear-gradient(
+    to right,
+    #4cb8c4 0%,
+    #3cd3ad 51%,
+    #4cb8c4 100%
+  );
   margin: 10px;
-  padding: 15px 45px;
+  padding: 10px 30px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;            
+  color: white;
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
@@ -177,16 +181,20 @@ td span {
   text-decoration: none;
 }
 
-       
 .supp-grad {
-  background-image: linear-gradient(to right, #D31027 0%, #EA384D  51%, #D31027  100%);
+  background-image: linear-gradient(
+    to right,
+    #d31027 0%,
+    #ea384d 51%,
+    #d31027 100%
+  );
   margin: 10px;
-  padding: 15px 45px;
+  padding: 10px 30px;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;            
+  color: white;
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;

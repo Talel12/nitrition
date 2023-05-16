@@ -3,10 +3,11 @@ import MedcineDashHeader from "../../components/MedcineDashHeader/MedcineDashHea
 
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "../MedPagesStyles.css";
-
+import { edituser } from "../../../../redux/userSlice/userSlice";
+import { refresh } from "../../../../App";
 
 function Users() {
   const [search, setSearch] = useState("");
@@ -14,13 +15,15 @@ function Users() {
   const [pagination, setPagination] = useState([]);
   const [Users, setUsers] = useState([]);
 
+  const dispatch = useDispatch();
+
   // Get the updated userList state from the Redux store
   const usersList = useSelector((state) => state.user.userList);
 
   useEffect(() => {
     setPagination(calculateRange(usersList, 5));
     setUsers(sliceData(usersList, page, 5));
-  }, [page,usersList]);
+  }, [page, usersList]);
 
   // Search
   const __handleSearch = (event) => {
@@ -29,7 +32,8 @@ function Users() {
       let search_results = usersList.filter(
         (item) =>
           item.name.toLowerCase().includes(search.toLowerCase()) ||
-          item.LastName.toLowerCase().includes(search.toLowerCase())
+          item.LastName.toLowerCase().includes(search.toLowerCase()) ||
+          item.email.toLowerCase().includes(search.toLowerCase())
       );
       setUsers(search_results);
     } else {
@@ -93,12 +97,28 @@ function Users() {
                     <span>{user.email}</span>
                   </td>
                   <td>
-                    <span>{user.role}</span>
+                    <h6>{user?.role}</h6>
                   </td>
                   <td>
-                    <span>
-                      <button className="upd-grad">Modifier</button>
-                    </span>
+                    <select
+                      // defaultValue={user?.role}
+                      onChange={(e) => {
+                        dispatch(
+                          edituser({
+                            id: user._id,
+                            newuser: { ...user, role: e.target.value },
+                          }),
+                          setTimeout(() => {
+                            refresh();
+                          }, 600)
+                        );
+                      }}
+                    >
+                      <option value="">Selectionner</option>
+                      <option value="patient">Patient</option>
+                      <option value="assistant">Assistant</option>
+                      <option value="medecin">Medecin</option>
+                    </select>
                   </td>
                 </tr>
               ))}

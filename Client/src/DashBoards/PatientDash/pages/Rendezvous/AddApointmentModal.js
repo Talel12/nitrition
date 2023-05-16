@@ -14,6 +14,7 @@ function AddApointmentModal({ setShowAddModal }) {
   );
   const [startAT, setStartAT] = useState("");
   const [endAt, setEndAt] = useState("");
+  const currentPatient = useSelector((store) => store?.user?.user);
 
   const [summary, setSummary] = useState("");
   const [patient, setPatient] = useState("");
@@ -30,7 +31,7 @@ function AddApointmentModal({ setShowAddModal }) {
       startAt: startAT,
       endAt: endAt,
       summary: summary,
-      patient: patient,
+      patient: currentPatient?._id,
     };
     console.log(newappointment);
     dispatch(addAppointment(newappointment));
@@ -61,7 +62,7 @@ function AddApointmentModal({ setShowAddModal }) {
           />
         </div>
 
-        <DatalistInput
+        {/* <DatalistInput
           style={{ color: "gray" }}
           placeholder="Patient"
           label="Selectionner Patient"
@@ -70,7 +71,7 @@ function AddApointmentModal({ setShowAddModal }) {
             setSummary(item.value);
           }}
           items={patientList}
-        />
+        /> */}
 
         {/* <div>
           <h3>Patient:</h3>
@@ -101,8 +102,14 @@ function AddApointmentModal({ setShowAddModal }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div> */}
-        <button type="submit">Ajouter</button>
-        <button type="button" onClick={handleCloseButtonClick}>
+        <button className="confirm-btn-primary" type="submit">
+          Ajouter
+        </button>
+        <button
+          className="cancel-btn-primary"
+          type="button"
+          onClick={handleCloseButtonClick}
+        >
           Annuler
         </button>
       </form>

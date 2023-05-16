@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   position: sticky;
-  background-image: linear-gradient(#1bd517, #68ed65, #96f595) ;
+  background-image: linear-gradient(#1bd517, #68ed65, #96f595);
 }
 .Assistante-sidebar-logo-container {
   background-color: #f0f0f0;
@@ -47,7 +47,7 @@
   border-radius: 20px;
 }
 .Assistante-sidebar-item:hover {
-  background-color: #04c400 ;
+  background-color: #04c400;
 }
 .Assistante-sidebar-item-active {
   border-radius: 20px;
@@ -60,7 +60,7 @@
   text-decoration: none;
   align-items: center;
   justify-content: flex-start;
-  background-color: #04c400 ;
+  background-color: #04c400;
   cursor: pointer;
 }
 .Assistante-sidebar-item-icon {
@@ -82,5 +82,24 @@
   cursor: pointer;
 }
 .Assistante-sidebar-footer:hover {
-  background-color: #04c400 ;
+  background-color: #04c400;
+}
+.react-datalist-input__listbox {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  width: 300px;
+  position: absolute;
+  top: 80px;
+}
+.react-datalist-input__listbox-option:hover {
+  background-color: rgb(219, 219, 219);
+  color: white;
+}
+.react-datalist-input__listbox-option {
+  width: 300px;
+}
+.react-datalist-input__container {
+  position: relative;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/DoctorInformations.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Sarra from "../assets/img/Sarra.jpeg";
+import Zeinebk from "../assets/img/zeineb2.jpeg";
 import zaineb from "../assets/img/zaineb.jpg";
 
 import "swiper/css";
@@ -27,7 +27,7 @@ const DoctorInformations = () => {
             <div className="card-left">
               <div className="imgContainer">
                 <img
-                  src={Sarra}
+                  src={zaineb}
                   // src="https://scontent.ftun9-1.fna.fbcdn.net/v/t1.15752-9/336601514_1794790650908197_3704060002786267094_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=ae9488&_nc_ohc=ZMP_BS_CAPcAX_hxZGH&_nc_ht=scontent.ftun9-1.fna&oh=03_AdQwgjQjMLrslavOoyDacW9ap3nwTRWmEOIha4GnPU-Etg&oe=643D21D3"
                   alt=""
                 />
@@ -61,7 +61,7 @@ const DoctorInformations = () => {
             </div>
             <div className="card-left">
               <div className="imgContainer">
-                <img src={zaineb} alt="" />
+                <img src={Zeinebk} alt="" />
               </div>
             </div>
           </div>

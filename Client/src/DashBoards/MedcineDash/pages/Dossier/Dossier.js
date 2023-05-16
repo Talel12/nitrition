@@ -22,8 +22,10 @@ function Dossier() {
 
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
-    setPatient(sliceData(patientsList, page, 5));
-  }, []);
+    if (patient.length === 0) {
+      setPatient(sliceData(patientsList, page, 5));
+    }
+  }, [patient, page]);
 
   // Search
   const __handleSearch = (event) => {
@@ -31,8 +33,9 @@ function Dossier() {
     if (event.target.value !== "") {
       let search_results = patientsList.filter(
         (item) =>
-          item.name.toLowerCase().includes(search.toLowerCase()) ||
-          item.LastName.toLowerCase().includes(search.toLowerCase())
+          item?.name.toLowerCase().includes(search.toLowerCase()) ||
+          item?.LastName.toLowerCase().includes(search.toLowerCase()) ||
+          item?.CIN.toLowerCase().includes(search.toLowerCase())
       );
       setPatient(search_results);
     } else {

@@ -4,7 +4,12 @@ import UpdateArticleModal from "../../components/UpdateUserModal";
 import { calculateRange, sliceData } from "../../utils/table-pagination";
 import { useDispatch, useSelector } from "react-redux";
 // import { deletearticle } from "../../../../redux/userSlice/userSlice";
-import { createArticle } from "../../../../redux/articleSlice/articleSlice";
+import {
+  createArticle,
+  deleteArticle,
+} from "../../../../redux/articleSlice/articleSlice";
+import "./article.css";
+import { width } from "@mui/system";
 
 const Articles = () => {
   const [search, setSearch] = useState("");
@@ -60,37 +65,60 @@ const Articles = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(createArticle(newArticle));
+    setTimeout(() => {
+      refresh();
+    }, 600);
   };
 
   return (
     <div>
-      <h3>Nouveau Articles</h3>
-      <form onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          type="text"
-          name="img"
-          placeholder="Image"
-        />
-        <input
-          onChange={handleChange}
-          type="text"
-          name="title"
-          placeholder="Titre de l'Article"
-        />
-        <input
-          onChange={handleChange}
-          type="text"
-          name="body"
-          placeholder="Contenu de l'Article"
-        />
-        <input
-          onChange={handleChange}
-          type="text"
-          name="source"
-          placeholder="Source"
-        />
-        <input type="submit" />
+      <form onSubmit={handleSubmit} className="Article-Form">
+        <h3>Nouveau Articles</h3>
+        <div className="form">
+          <input
+            onChange={handleChange}
+            type="text"
+            name="img"
+            placeholder="Image URL"
+          />
+          <input
+            onChange={handleChange}
+            type="text"
+            name="title"
+            placeholder="Titre de l'Article"
+          />
+          <textarea
+            rows={4}
+            cols={98}
+            onChange={handleChange}
+            type="text"
+            name="body"
+            placeholder="Contenu de l'Article"
+            style={{
+              padding: 10,
+              borderRadius: 15,
+              boxShadow: "0px 14px 9px -15px rgba(0, 0, 0, 0.25)",
+              backgroundColor: "#f5f5f5",
+              borderColor: "rgba(0, 0, 0, 0.3)",
+            }}
+          />
+          <input
+            onChange={handleChange}
+            type="text"
+            name="source"
+            placeholder="Source"
+          />
+
+          <input
+            type="submit"
+            value={"Creer"}
+            width={"50px"}
+            style={{
+              width: 150,
+              minWidth: 150,
+            }}
+          />
+        </div>
       </form>
 
       <div className="MedcineDash-content-container">
@@ -111,9 +139,9 @@ const Articles = () => {
           <thead>
             <th>ID</th>
             <th>IMAGE</th>
-            <th>TITLE</th>
-            <th>BODY</th>
-            <th>UPDATE</th>
+            <th>TITRE</th>
+            <th>CONTENU</th>
+            {/* <th>UPDATE</th> */}
             <th>SUPPRIMER</th>
           </thead>
 
@@ -143,7 +171,7 @@ const Articles = () => {
                   <td>
                     <span>{article.body}</span>
                   </td>
-                  <td>
+                  {/* <td>
                     <span>
                       <button
                         className="upd-grad"
@@ -154,14 +182,16 @@ const Articles = () => {
                         Modifier
                       </button>
                     </span>
-                  </td>
+                  </td> */}
                   <td>
                     <span>
                       <button
                         className="supp-grad"
                         onClick={() => {
-                          // dispatch(deletearticle(article._id));
-                          refresh();
+                          dispatch(deleteArticle(article._id));
+                          setTimeout(() => {
+                            refresh();
+                          }, 1000);
                         }}
                       >
                         Supprimer

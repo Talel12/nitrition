@@ -34,48 +34,62 @@ function AddUserModal({ setShowAddModal }) {
 
   return (
     <div className="modal">
+      <h2>Creer un Patient</h2>
+      <br />
       <form onSubmit={handleSubmit}>
-        <h2>Creer un Patient</h2>
         <div>
-          <h3>Prénom:</h3>
-          <input
-            type="text"
-            autocomplete=""
-            placeholder="Prénom"
-            onChange={(e) => setName(e.target.value)}
-          />
+          {" "}
+          <div>
+            <h3>Prénom:</h3>
+            <input
+              type="text"
+              autocomplete=""
+              placeholder="Prénom"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div>
+            <h3>Nom:</h3>
+            <input
+              type="text"
+              autocomplete=""
+              placeholder="Nom"
+              onChange={(e) => setLastName(e.target.value)}
+            />
+          </div>
         </div>
         <div>
-          <h3>Nom:</h3>
-          <input
-            type="text"
-            autocomplete=""
-            placeholder="Nom"
-            onChange={(e) => setLastName(e.target.value)}
-          />
+          <div>
+            <h3>Email:</h3>
+            <input
+              type="email"
+              autocomplete=""
+              placeholder="email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <h3>Mot de Passe:</h3>
+            <input
+              type="password"
+              autocomplete="current-password"
+              placeholder="mot de passe"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
         </div>
         <div>
-          <h3>Email:</h3>
-          <input
-            type="email"
-            autocomplete=""
-            placeholder="email"
-            onChange={(e) => setEmail(e.target.value)}
-          />
+          <button className="confirm-btn-primary" type="submit">
+            Ajouter
+          </button>
+          <button
+            className="cancel-btn-primary"
+            type="button"
+            onClick={handleCloseButtonClick}
+          >
+            Annuler
+          </button>
         </div>
-        <div>
-          <h3>Mot de Passe:</h3>
-          <input
-            type="password"
-            autocomplete="current-password"
-            placeholder="mot de passe"
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit">Ajouter</button>
-        <button type="button" onClick={handleCloseButtonClick}>
-          Annuler
-        </button>
       </form>
     </div>
   );

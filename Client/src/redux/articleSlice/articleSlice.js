@@ -23,6 +23,14 @@ export const createArticle = createAsyncThunk(
   }
 );
 
+export const deleteArticle = createAsyncThunk(
+  "articles/deleteArticle",
+  async (articleId) => {
+    await axios.delete(`http://localhost:5000/article/${articleId}`);
+    return articleId;
+  }
+);
+
 const articleSlices = createSlice({
   name: "articles",
   initialState,
@@ -49,6 +57,19 @@ const articleSlices = createSlice({
       })
       .addCase(createArticle.rejected, (state, action) => {
         state.status = "rejected";
+        state.error = action.error.message;
+      })
+      .addCase(deleteArticle.pending, (state) => {
+        state.status = "pending";
+      })
+      .addCase(deleteArticle.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.articles = state.articles.filter(
+          (article) => article.id !== action.payload
+        );
+      })
+      .addCase(deleteArticle.rejected, (state, action) => {
+        state.status = "failed";
         state.error = action.error.message;
       });
   },
