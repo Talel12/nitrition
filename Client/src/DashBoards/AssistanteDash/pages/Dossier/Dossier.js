@@ -8,7 +8,6 @@ import { getAllUsers } from "../../../../redux/userSlice/userSlice";
 
 import "../AssPagesStyles.css";
 
-
 function Dossier() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -30,7 +29,7 @@ function Dossier() {
   useEffect(() => {
     setPagination(calculateRange(patientsList, 5));
     setPatient(sliceData(patientsList, page, 5));
-  }, [patientsList,page]);
+  }, [patientsList, page]);
 
   // Search
   const __handleSearch = (event) => {
@@ -73,7 +72,7 @@ function Dossier() {
 
         <table>
           <thead>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>COSTUMER</th>
             <th>Creation Date</th>
             <th>UPDATE</th>
@@ -84,14 +83,14 @@ function Dossier() {
             <tbody>
               {patient.map((user, index) => (
                 <tr key={index}>
-                  <td>
+                  {/* <td>
                     <span>{index}</span>
                   </td>
-              
+               */}
 
                   <td>
                     <div>
-                    <img
+                      <img
                         src={user.img}
                         className="AssistanteDash-content-avatar"
                         alt={user.name + " " + user.LastName}
@@ -131,6 +130,7 @@ function Dossier() {
                 {item}
               </span>
             ))}
+            {pagination.length === 1 && <h2>..</h2>}
           </div>
         ) : (
           <div className="AssistanteDash-content-footer">

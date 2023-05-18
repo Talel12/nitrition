@@ -67,7 +67,7 @@ function Users() {
 
         <table>
           <thead>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>PATIENT</th>
             <th>EMAIL</th>
             <th>ROLE</th>
@@ -78,9 +78,9 @@ function Users() {
             <tbody>
               {Users.map((user, index) => (
                 <tr key={index}>
-                  <td>
+                  {/* <td>
                     <span>{index}</span>
-                  </td>
+                  </td> */}
                   <td>
                     <div>
                       <img
@@ -137,6 +137,7 @@ function Users() {
                 {item}
               </span>
             ))}
+            {pagination.length === 1 && <h2>..</h2>}
           </div>
         ) : (
           <div className="MedcineDash-content-footer">

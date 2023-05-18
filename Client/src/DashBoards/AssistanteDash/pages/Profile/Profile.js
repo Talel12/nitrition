@@ -29,7 +29,13 @@ const Profile = () => {
           <input name="img" onChange={handleChange} placeholder="Url d'image" />
           <input name="name" onChange={handleChange} placeholder="Prénom" />
           <input name="LastName" onChange={handleChange} placeholder="Nom" />
-          <input name="CIN" onChange={handleChange} placeholder="CIN" />
+          <input
+            name="CIN"
+            onChange={handleChange}
+            placeholder="CIN"
+            maxLength={8}
+            minLength={8}
+          />
 
           <button
             type="submit"

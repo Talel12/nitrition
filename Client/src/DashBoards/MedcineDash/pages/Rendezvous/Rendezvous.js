@@ -211,6 +211,7 @@ function Rendezvous() {
                 {item}
               </span>
             ))}
+            {pagination.length === 1 && <h2>..</h2>}
           </div>
         ) : (
           <div className="AssistanteDash-content-footer">

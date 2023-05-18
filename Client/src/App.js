@@ -4,6 +4,7 @@ import aos from "aos";
 import "aos/dist/aos.css";
 import "kalend/dist/styles/index.css";
 // eslint-disable-next-line
+// import "react-datalist-input/dist/styles.css";
 
 import { Route, Routes } from "react-router-dom/dist";
 import Home from "./pages/Home";
@@ -29,6 +30,7 @@ import MedcineProfile from "./DashBoards/MedcineDash/pages/Profile/Profile";
 import MedcineArticles from "./DashBoards/MedcineDash/pages/Articles/Articles";
 import MedcineDiscussion from "./DashBoards/MedcineDash/pages/Discussion/Discussion";
 
+import AssistanteDossier from "./DashBoards/AssistanteDash/pages/Dossier/Dossier";
 import AssistantePatients from "./DashBoards/AssistanteDash/pages/Patients/Patients";
 import AssistanteRendezvous from "./DashBoards/AssistanteDash/pages/Rendezvous/Rendezvous";
 import AssistanteProfile from "./DashBoards/AssistanteDash/pages/Profile/Profile";
@@ -46,6 +48,7 @@ import { fetchAppointments } from "./redux/rendezvousSlice/rendezvousSlice";
 import { fetchConsultations } from "./redux/consultationSlice/consultationSlice";
 import { fetchPatientDossiers } from "./redux/dossierSlice/dossierSlice";
 import { fetchArticle } from "./redux/articleSlice/articleSlice";
+import Conversation from "./components/conversation/Conversation";
 import Chat from "./pages/chat/Chat";
 import PatientArticleDetails from "./DashBoards/PatientDash/pages/Articles/PatientArticleDetails";
 import MedecinPrivateRoute from "./route/MedecinPrivateRoute";

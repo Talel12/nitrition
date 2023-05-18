@@ -68,7 +68,7 @@ function Dossier() {
 
         <table>
           <thead>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>PATIENT</th>
             <th>CIN</th>
             <th>DOSSIER</th>
@@ -95,6 +95,7 @@ function Dossier() {
                 {item}
               </span>
             ))}
+            {pagination.length === 1 && <h2>..</h2>}
           </div>
         ) : (
           <div className="s-content-footer">
