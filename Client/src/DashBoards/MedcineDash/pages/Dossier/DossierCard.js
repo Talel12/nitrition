@@ -11,9 +11,9 @@ const DossierCard = ({ user, index }) => {
         <DossierModal dossier={user} showModal={setAddDossierShowModal} />
       )}
       <tr key={index}>
-        <td>
+        {/* <td>
           <span>{index}</span>
-        </td>
+        </td> */}
 
         <td>
           <div>

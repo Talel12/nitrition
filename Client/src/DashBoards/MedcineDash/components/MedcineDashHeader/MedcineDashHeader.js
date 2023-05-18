@@ -5,7 +5,7 @@ import AddUserModal from "../AddUserModal";
 import { useSelector } from "react-redux";
 import AddApointmentModal from "../../../AssistanteDash/components/AddApointmentModal";
 
-function MedcineDashHeader({ btnText }) {
+function MedcineDashHeader({ btnText, eventTitle }) {
   const [showAddModal, setShowAddModal] = useState(false);
   const user = useSelector((store) => store?.user?.user);
 
@@ -26,7 +26,11 @@ function MedcineDashHeader({ btnText }) {
             alignItems: "center",
           }}
         >
-          <AddUserModal setShowAddModal={setShowAddModal} />
+          {eventTitle === "appointment" ? (
+            <AddApointmentModal setShowAddModal={setShowAddModal} />
+          ) : (
+            <AddUserModal setShowAddModal={setShowAddModal} />
+          )}
         </div>
       ) : (
         <>

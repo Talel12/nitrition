@@ -78,7 +78,7 @@ function Rendezvous() {
 
         <table>
           <thead>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>DATE</th>
             <th>L'HEURE</th>
             <th>NOTE</th>
@@ -89,9 +89,9 @@ function Rendezvous() {
             <tbody>
               {rendv?.map((rdv, index) => (
                 <tr key={index}>
-                  <td>
+                  {/* <td>
                     <span>{index}</span>
-                  </td>
+                  </td> */}
 
                   <td>
                     <div>
@@ -144,6 +144,7 @@ function Rendezvous() {
                 {item}
               </span>
             ))}
+            {pagination.length === 1 && <h2>..</h2>}
           </div>
         ) : (
           <div className="s-content-footer">

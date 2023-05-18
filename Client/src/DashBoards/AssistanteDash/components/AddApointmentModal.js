@@ -56,6 +56,9 @@ function AddApointmentModal({ setShowAddModal }) {
             <h2>Debut de consultation:</h2>
             <input
               // value={startAt.substr(0, 19)}
+              min={new Date()
+                .toISOString()
+                .slice(0, new Date().toISOString().lastIndexOf(":"))}
               type="datetime-local"
               autoComplete=""
               placeholder="Start Date"
@@ -68,6 +71,9 @@ function AddApointmentModal({ setShowAddModal }) {
             <h2>Fin de consultation:</h2>
             <input
               type="datetime-local"
+              min={new Date()
+                .toISOString()
+                .slice(0, new Date().toISOString().lastIndexOf(":"))}
               onChange={(e) => {
                 setEndAt(e.target.value);
               }}

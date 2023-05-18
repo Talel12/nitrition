@@ -125,7 +125,7 @@ const Articles = () => {
 
         <table>
           <thead>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>IMAGE</th>
             <th>TITRE</th>
             <th>CONTENU</th>
@@ -136,9 +136,9 @@ const Articles = () => {
             <tbody>
               {article.map((article, index) => (
                 <tr key={index}>
-                  <td>
+                  {/* <td>
                     <span>{index}</span>
-                  </td>
+                  </td> */}
 
                   <td>
                     <div>
@@ -191,6 +191,7 @@ const Articles = () => {
                 {item}
               </span>
             ))}
+            {pagination.length === 1 && <h2>..</h2>}
           </div>
         ) : (
           <div className="MedcineDash-content-footer">

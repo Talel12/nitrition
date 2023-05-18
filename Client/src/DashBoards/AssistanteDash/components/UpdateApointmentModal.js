@@ -54,6 +54,9 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
             <input
               value={startAt.substr(0, 19)}
               type="datetime-local"
+              min={new Date()
+                .toISOString()
+                .slice(0, new Date().toISOString().lastIndexOf(":"))}
               autoComplete=""
               placeholder="Start Date"
               onChange={(e) => {
@@ -66,6 +69,9 @@ function UpdateApointmentModal({ currentAppointment, setShowEditModal }) {
             <input
               value={endAt.substr(0, 19)}
               type="datetime-local"
+              min={new Date()
+                .toISOString()
+                .slice(0, new Date().toISOString().lastIndexOf(":"))}
               onChange={(e) => {
                 setEndAt(e.target.value);
               }}
