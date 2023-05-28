@@ -42,6 +42,8 @@ const Profile = () => {
             placeholder="CIN"
             maxLength={8}
             minLength={8}
+            pattern="[0-9.]+"
+            type="input"
           />
 
           <button

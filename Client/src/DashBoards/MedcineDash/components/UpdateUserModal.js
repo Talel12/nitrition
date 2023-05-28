@@ -75,9 +75,12 @@ function UpdateUserModal({ user, setShowUpdateModal }) {
           <div>
             <h2>CIN:</h2>
             <input
-              type="number"
               autoComplete=""
               value={CIN}
+              maxLength={8}
+              minLength={8}
+              pattern="[0-9.]+"
+              type="input"
               onChange={(e) => setCIN(e.target.value)}
             />
           </div>

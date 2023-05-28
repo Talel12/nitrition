@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { addMessage, getMessages } from "../../api/MessageRequests";
 // import { getUser } from "../../api/UserRequests";
 import "./ChatBox.css";
-import { format } from "timeago.js";
+// import { format } from "timeago.js";
 import InputEmoji from "react-input-emoji";
 import { useSelector } from "react-redux";
 
@@ -130,8 +130,7 @@ const ChatBox = ({ chat, currentUser, setSendMessage, receivedMessage }) => {
                         : "message"
                     }
                   >
-                    <span>{message.text}</span>{" "}
-                    <span>{format(message.createdAt)}</span>
+                    <span>{message.text}</span> <span>{message.createdAt}</span>
                   </div>
                 </>
               ))}

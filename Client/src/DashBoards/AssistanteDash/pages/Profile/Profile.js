@@ -30,11 +30,13 @@ const Profile = () => {
           <input name="name" onChange={handleChange} placeholder="Prénom" />
           <input name="LastName" onChange={handleChange} placeholder="Nom" />
           <input
+            maxLength={8}
+            minLength={8}
+            pattern="[0-9.]+"
+            type="input"
             name="CIN"
             onChange={handleChange}
             placeholder="CIN"
-            maxLength={8}
-            minLength={8}
           />
 
           <button
