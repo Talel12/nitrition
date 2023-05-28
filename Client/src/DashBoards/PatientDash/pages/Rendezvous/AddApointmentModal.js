@@ -44,6 +44,9 @@ function AddApointmentModal({ setShowAddModal }) {
           <h3>Date de rendez-vous:</h3>
           <input
             type="datetime-local"
+            min={new Date()
+              .toISOString()
+              .slice(0, new Date().toISOString().lastIndexOf(":"))}
             autoComplete=""
             placeholder="Date"
             onChange={(e) => {

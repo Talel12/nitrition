@@ -46,13 +46,13 @@ const Newsletter = () => {
     const msgClient = {
       to_name: email,
       from_name: ManagerName,
-      message: `Vous êtes maintenant inscrit au newsletters`,
+      message: `Félicitations, vous êtes inscrit notre magazine`,
       to_email: email,
     };
     const msgManager = {
       to_name: ManagerName,
       from_name: email,
-      message: `${email} a inscrit au newsletters`,
+      message: `${email} a inscrit à votre magazine`,
       to_email: ManagerEmail,
     };
     try {
